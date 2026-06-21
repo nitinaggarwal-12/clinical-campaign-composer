@@ -1,0 +1,8 @@
+{
+    "CampaignName": "KEYTRUDA Oncology Campaign",
+    "TherapeuticArea": "Oncology",
+    "TargetPatientPopulation": "First-line Metastatic Non-Small Cell Lung Cancer (NSCLC) expressing PD-L1 (TPS \u22651%) with no EGFR or ALK genomic tumor aberrations",
+    "KeyEfficacyClaim": "In KEYNOTE-042, KEYTRUDA as a single agent demonstrated a median Overall Survival (OS) of 16.7 months (95% CI: 13.9, 19.7) compared to 12.1 months (95% CI: 11.3, 13.3) for chemotherapy in patients with PD-L1 TPS \u22651% NSCLC (HR 0.81 [95% CI: 0.71, 0.93]; p=0.0036).",
+    "KeySafetyParameter": "Immune-Mediated Adverse Reactions (e.g., pneumonitis, colitis, hepatitis, endocrinopathies, nephritis, dermatologic reactions), which may be severe or fatal. Monitor for early identification and management.",
+    "CoreMarketingHookCallToAction": "Empower your body's defenses against cancer. Discuss with your physician how KEYTRUDA could be part of your first-line treatment for metastatic NSCLC."
+}

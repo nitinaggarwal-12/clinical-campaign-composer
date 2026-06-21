@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestro ContentStudio - Agentic Compliance & Brand Workspace</title>
+    <!-- Google Fonts: Outfit & Inter for premium, modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vis.js Network CDN for high-performance interactive clinical ontology graphs -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- Chart.js CDN for premium executive analytics and brand sentiment dashboards -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css?v=1.1.0">
+    <style type="text/css">
+        /* PRINT STYLES FOR PIXEL-PERFECT FDA FORM 2253 PDF EXPORT */
+        @media print {
+            body * {
+                visibility: hidden !important;
+            }
+            #fda-2253-print-container, #fda-2253-print-container * {
+                visibility: visible !important;
+            }
+            #fda-2253-print-container {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- TOP NAVIGATION BAR (Premium Restructured Header matching Mockups!) -->
+        <header class="app-header">
+            <div class="header-left" onclick="switchPhase(-1)" style="cursor: pointer; transition: var(--transition-smooth);" onmouseover="this.style.filter='brightness(1.25)'" onmouseout="this.style.filter='none'">
+                <div class="logo-container">
+                    <span class="logo-icon">M</span>
+                </div>
+                <div class="brand-info">
+                    <h1>MAESTRO <span class="header-badge-contentstudio">ContentStudio</span></h1>
+                    <p>Agentic Marketing Workbench & Compliance Ledger</p>
+                </div>
+            </div>
+            
+            <!-- Global Header Menu Text Navigation (Stationary & Elegant!) -->
+            <div class="header-workflow-nav" id="header-workflow-nav" style="display: flex; align-items: center; gap: 0.8rem; justify-content: center; flex: 1; box-sizing: border-box;">
+                <button onclick="switchPhase(-1)" id="global-nav-btn--1" class="global-nav-btn" title="Global Strategic Command Center">Command Center</button>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); opacity: 0.4;">➔</span>
+                <button onclick="switchPhase(1)" id="global-nav-btn-1" class="global-nav-btn" title="Clinical Ingest Deck">Clinical Ingest</button>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); opacity: 0.4;">➔</span>
+                <button onclick="switchPhase(2)" id="global-nav-btn-2" class="global-nav-btn" title="Creative Composer Workbench">Creative Composer</button>
+                <span style="font-size: 0.6rem; color: var(--color-text-muted); opacity: 0.4;">➔</span>
+                <button onclick="switchPhase(3)" id="global-nav-btn-3" class="global-nav-btn" title="Governance & Compliance Ledger">Governance Ledger</button>
+            </div>
+            
+            <!-- Hidden Legacy Navigation Tabs (Kept in DOM to guarantee zero JS selector breakage!) -->
+            <nav class="header-nav" style="display: none !important;">
+                <button class="nav-link tab-btn active" onclick="switchTab('workbench')" id="tab-btn-workbench">Marketing Workbench</button>
+                <button class="nav-link tab-btn" onclick="switchTab('explorer')" id="tab-btn-explorer">Claims Graph Explorer</button>
+                <button class="nav-link tab-btn" onclick="switchTab('ledger')" id="tab-btn-ledger">Compliance Ledger</button>
+                <button class="nav-link tab-btn" onclick="switchTab('analytics')" id="tab-btn-analytics">Analytics & Audits</button>
+            </nav>
+            
+            <div class="header-actions">
+                <!-- Interactive Analytics button matching the mockup -->
+                <button class="btn btn-secondary btn-small btn-analytics-trigger" onclick="toggleDiagnosticsModal()" style="display: flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 6px; cursor: pointer; outline: none; transition: var(--transition-smooth); background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); color: var(--color-text-main);">
+                    <span>📊</span> Analytics
+                </button>
+                <span class="badge badge-header-status" id="header-compliance-badge">
+                    <span class="pulse-icon-green"></span> FDA & VEEVA PROMC-LOCKED
+                </span>
+                <span class="user-profile" id="btn-role-selector">nitinagga-ge-2</span>
+                <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme">
+                    <span class="theme-icon" id="theme-icon">☀️</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN WORKSPACE CONTENT (Dedicated Viewport Router) -->
+        <main class="main-content">
+            
+            <!-- TAB 1: MAIN WORKFLOW WORKSPACE (HOUSES ALL 5 PROGRESSIVE PHASES) -->
+            <div id="tab-workbench" class="tab-content active-tab" style="display: flex; flex-direction: column; height: 100%; width: 100%;">
+                
+                <!-- PHASE -1: GLOBAL STRATEGIC INTELLIGENCE COMMAND CENTER -->
+                <div class="phase-container" id="phase-minus1-view" style="display: flex; flex-direction: column; flex: 1; min-height: 0; width: 100%;">
+                    <div class="phase-title-strip" style="padding: 1.25rem 2rem 0 2rem; box-sizing: border-box;">
+                        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-text-main); margin: 0; font-family: 'Outfit';">COMMAND CENTER: GLOBAL STRATEGIC INTELLIGENCE</h2>
+                        <p style="font-size: 0.78rem; color: var(--color-text-muted); margin: 0.2rem 0 0 0;">The foundational strategic intelligence hub of the Maestro Enterprise Ecosystem.</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 52fr 48fr; flex: 1; min-height: 0; overflow: hidden; padding: 1.5rem 2rem; gap: 1.5rem; box-sizing: border-box; position: relative;">
+                        <!-- Left Column: Competitive Claims Heatmap -->
+                        <div class="cdo-metric-card" style="display: flex; flex-direction: column; padding: 1.5rem; height: 100%; box-sizing: border-box; overflow: hidden;">
+                            <div class="panel-header-compact" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; flex-shrink: 0;">
+                                <span class="panel-icon">📊</span>
+                                <h3 style="font-size: 0.95rem; font-weight: 800; color: var(--color-text-main); margin: 0; display: inline;">Competitive Claims Heatmap</h3>
+                                <p style="font-size: 0.68rem; color: var(--color-text-muted); margin: 0.2rem 0 0 0;">An active, interactive matrix mapping clinical oncology indications against competitive compounds.</p>
+                            </div>
+                            
+                            <div style="flex: 1; overflow-y: auto; overflow-x: auto;">
+                                <table class="heatmap-table" style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align: left; padding: 0.6rem 0.4rem; font-size: 0.68rem; text-transform: uppercase; color: var(--color-text-muted);">Indication</th>
+                                            <th style="padding: 0.6rem 0.4rem; font-size: 0.68rem; text-transform: uppercase; color: var(--color-text-muted);">Competitor<br><span style="font-size: 0.55rem; font-style: italic;">(Product)</span></th>
+                                            <th style="padding: 0.6rem 0.4rem; font-size: 0.68rem; text-transform: uppercase; color: var(--color-text-muted);">Competic-in<br><span style="font-size: 0.55rem; font-style: italic;">(Product)</span></th>
+                                            <th style="padding: 0.6rem 0.4rem; font-size: 0.68rem; text-transform: uppercase; color: var(--color-text-muted);">KEYNOTE-607<br><span style="font-size: 0.55rem; font-style: italic;">(Product)</span></th>
+                                            <th style="padding: 0.6rem 0.4rem; font-size: 0.68rem; text-transform: uppercase; color: var(--color-text-muted);">KEYNOTE-3A<br><span style="font-size: 0.55rem; font-style: italic;">(Product)</span></th>
+                                            <th style="padding: 0.6rem 0.4rem; font-size: 0.68rem; text-transform: uppercase; color: var(--color-text-muted);">Competitiiic<br><span style="font-size: 0.55rem; font-style: italic;">(Product)</span></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="font-size: 0.72rem; font-weight: 700;">
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02); cursor: pointer; transition: background 0.2s;" onclick="triggerStrategicIngest('NSCLC', 'datasets/KEYTRUDA_Prescribing_Information_NSCLC.txt')" onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='none'">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">NSCLC <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-blue">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-blue">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-purple">0</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02); cursor: pointer; transition: background 0.2s;" onclick="triggerStrategicIngest('RCC', 'datasets/WELIREG_FDA_Approved_Label_2026.txt')" onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='none'">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">RCC <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-blue">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-purple">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">Gfy oncology <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-blue">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge red-delta">Δ</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">EUETP <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-blue">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02); cursor: pointer; transition: background 0.2s;" onclick="triggerStrategicIngest('PFS', 'datasets/LITESPARK-005_Trial_Data_Briefing.txt')" onmouseover="this.style.background='rgba(255,255,255,0.02)'" onmouseout="this.style.background='none'">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">PFS <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge red-delta">Δ</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">Hyporoescohitia <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge orange-o">O</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge red-delta">Δ</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">Oncology Indications <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge red-delta">Δ</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge orange-o">O</span></td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.02);">
+                                            <td style="padding: 0.8rem 0.4rem; color: var(--color-text-main);">Drug Dooms <span style="color: var(--color-primary); margin-left: 0.25rem;">➔</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge zero-teal">0</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge gold-g">G</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge orange-o">O</span></td>
+                                            <td style="text-align: center;"><span class="heatmap-badge red-delta">Δ</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column: Brand Sentiment & Share of Voice Dashboard -->
+                        <div class="cdo-metric-card" style="display: flex; flex-direction: column; padding: 1.5rem; height: 100%; box-sizing: border-box; overflow: hidden; position: relative;">
+                            <div class="panel-header-compact" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <span class="panel-icon">📈</span>
+                                    <h3 style="font-size: 0.95rem; font-weight: 800; color: var(--color-text-main); margin: 0; display: inline;">Brand Sentiment & Share of Voice Dashboard</h3>
+                                    <p style="font-size: 0.68rem; color: var(--color-text-muted); margin: 0.2rem 0 0 0;">Verbatim CDO sentiment tracker, HCP perceptions, and target forecast projections.</p>
+                                </div>
+                                <span class="badge-verified" style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.2); font-size: 0.58rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 20px;">✓ Verified</span>
+                            </div>
+                            
+                            <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 1.25rem;">
+                                <!-- Speedometer Gauges Row -->
+                                <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                                    <div class="gauge-card" style="flex: 1; background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.35rem;">HCP Perception</span>
+                                        <svg width="80" height="48" viewBox="0 0 100 60">
+                                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+                                            <path d="M 10 50 A 40 40 0 0 1 75 22" fill="none" stroke="var(--color-primary)" stroke-width="8" stroke-linecap="round"/>
+                                            <line x1="50" y1="50" x2="70" y2="28" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                                            <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                                        </svg>
+                                        <span style="font-size: 0.65rem; color: #34d399; font-weight: 800; margin-top: 0.25rem;">Current Gauges</span>
+                                    </div>
+                                    <div class="gauge-card" style="flex: 1; background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.35rem;">Competitive Adherence</span>
+                                        <svg width="80" height="48" viewBox="0 0 100 60">
+                                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+                                            <path d="M 10 50 A 40 40 0 0 1 85 30" fill="none" stroke="var(--color-secondary)" stroke-width="8" stroke-linecap="round"/>
+                                            <line x1="50" y1="50" x2="80" y2="35" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                                            <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                                        </svg>
+                                        <span style="font-size: 0.65rem; color: var(--color-secondary); font-weight: 800; margin-top: 0.25rem;">98.2% Approved</span>
+                                    </div>
+                                    <div class="gauge-card" style="flex: 1; background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.35rem;">Share of Voice</span>
+                                        <svg width="80" height="48" viewBox="0 0 100 60">
+                                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+                                            <path d="M 10 50 A 40 40 0 0 1 80 25" fill="none" stroke="var(--color-primary)" stroke-width="8" stroke-linecap="round"/>
+                                            <line x1="50" y1="50" x2="75" y2="30" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                                            <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                                        </svg>
+                                        <span style="font-size: 0.65rem; color: #34d399; font-weight: 800; margin-top: 0.25rem;">98.2% (Fasts)</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sentiment Bar Charts Row -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; min-height: 120px;">
+                                    <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.25rem;">Market Sentiment Ratio</span>
+                                        <canvas id="chart-sentiment-bar" style="width: 100%; height: 100%; max-height: 110px;"></canvas>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.25rem;">Share of Voice by Indication</span>
+                                        <canvas id="chart-sov-bar" style="width: 100%; height: 100%; max-height: 110px;"></canvas>
+                                    </div>
+                                </div>
+                                
+                                <!-- Forecast Area Chart Card -->
+                                <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Forecasted CDO Goal Alignment</span>
+                                        <span style="font-size: 0.58rem; color: #10b981; font-weight: 700;">✓ Verified</span>
+                                    </div>
+                                    <p style="font-size: 0.6rem; color: var(--color-text-muted); margin: 0;">Adjustments in Phase 0 strategically optimize downstream CDO market alignment.</p>
+                                    <div style="flex: 1; min-height: 130px; position: relative;">
+                                        <canvas id="chart-cdo-alignment" style="width: 100%; height: 100%; max-height: 130px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Phase 0 Trigger on the far right edge -->
+                        <div class="phase-connector-card" onclick="switchPhase(0)" title="Proceed to Campaign Portfolio Planning" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-right: none; padding: 0.75rem 0.5rem; border-radius: 8px 0 0 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; cursor: pointer; z-index: 99; transition: var(--transition-smooth); box-shadow: var(--shadow-lg);" onmouseover="this.style.background='var(--bg-surface)'" onmouseout="this.style.background='var(--bg-surface-solid)'">
+                            <span style="font-size: 1rem;">⚙️</span>
+                            <span style="font-size: 0.55rem; font-weight: 800; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; color: var(--color-primary); letter-spacing: 0.5px;">Campaign Strategy</span>
+                            <span style="font-size: 0.65rem; color: var(--color-primary); margin-top: 0.25rem;">➔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 0: STRATEGIC PORTFOLIO & CAMPAIGN PLANNING -->
+                <div class="phase-container" id="phase-0-view" style="display: none; flex-direction: column; flex: 1; min-height: 0; width: 100%;">
+                    <div class="phase-title-strip" style="padding: 1.25rem 2rem 0 2rem; box-sizing: border-box;">
+                        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-text-main); margin: 0; font-family: 'Outfit';">STRATEGIC PORTFOLIO & CAMPAIGN PLANNING</h2>
+                        <p style="font-size: 0.78rem; color: var(--color-text-muted); margin: 0.2rem 0 0 0;">Orchestrate and coordinate campaign strategy, briefs, and indications.</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 58fr 42fr; flex: 1; min-height: 0; overflow: hidden; padding: 1.5rem 2rem; gap: 1.5rem; box-sizing: border-box; position: relative;">
+                        
+                        <!-- Floating Phase -1 Trigger on the far left edge -->
+                        <div class="phase-connector-card-left" onclick="switchPhase(-1)" title="Back to Command Center" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-left: none; padding: 0.75rem 0.5rem; border-radius: 0 8px 8px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; cursor: pointer; z-index: 99; transition: var(--transition-smooth); box-shadow: var(--shadow-lg);" onmouseover="this.style.background='var(--bg-surface)'" onmouseout="this.style.background='var(--bg-surface-solid)'">
+                            <span style="font-size: 1rem;">📊</span>
+                            <span style="font-size: 0.55rem; font-weight: 800; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; color: var(--color-text-muted); letter-spacing: 0.5px;">Command Center</span>
+                            <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-top: 0.25rem;">⤙</span>
+                        </div>
+
+                        <!-- Left Column: Strategy Map Network -->
+                        <div class="cdo-metric-card" style="display: flex; flex-direction: column; padding: 1.5rem; height: 100%; box-sizing: border-box; overflow: hidden;">
+                            <div class="panel-header-compact" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; flex-shrink: 0;">
+                                <span class="panel-icon">🕸️</span>
+                                <h3 style="font-size: 0.95rem; font-weight: 800; color: var(--color-text-main); margin: 0; display: inline;">Portfolio & Indication Strategy Map</h3>
+                                <p style="font-size: 0.68rem; color: var(--color-text-muted); margin: 0.2rem 0 0 0;">Interactive clinical ontology network map mapping indication brief strategy targets.</p>
+                            </div>
+                            <div style="flex: 1; width: 100%; min-height: 0; position: relative;">
+                                <div id="portfolio-strategy-network" class="strategy-map-container" style="height: 100%; width: 100%;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column: Strategic Brief Metrics Dashboard -->
+                        <div class="cdo-metric-card" style="display: flex; flex-direction: column; padding: 1.5rem; height: 100%; box-sizing: border-box; overflow: hidden; position: relative;">
+                            <div class="panel-header-compact" style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <span class="panel-icon">📋</span>
+                                    <h3 style="font-size: 0.95rem; font-weight: 800; color: var(--color-text-main); margin: 0; display: inline;">Strategic Brief Metrics Dashboard</h3>
+                                    <p style="font-size: 0.68rem; color: var(--color-text-muted); margin: 0.2rem 0 0 0;">Interactive circular gauges, latency tracking, and brief scorecards.</p>
+                                </div>
+                                <span class="badge-verified" style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.2); font-size: 0.58rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 20px;">✓ Verified</span>
+                            </div>
+                            
+                            <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem;">
+                                <!-- Dials Row -->
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                    <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 140px;">
+                                        <span style="font-size: 0.62rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">Campaign Brief Template Progress</span>
+                                        <svg width="85" height="85" viewBox="0 0 100 100">
+                                            <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.04)" stroke-width="8" fill="none"/>
+                                            <circle cx="50" cy="50" r="40" stroke="#10b981" stroke-width="8" fill="none" stroke-dasharray="251.2" stroke-dashoffset="0" stroke-linecap="round"/>
+                                            <text x="50" y="56" font-family="Outfit" font-size="18" font-weight="800" fill="#ffffff" text-anchor="middle">100%</text>
+                                        </svg>
+                                    </div>
+                                    <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 140px;">
+                                        <span style="font-size: 0.62rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 0.75rem;">Indicational Goal Alignment</span>
+                                        <svg width="90" height="55" viewBox="0 0 100 60">
+                                            <path d="M 10 50 A 40 40 0 0 1 90 50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="8" stroke-linecap="round"/>
+                                            <path d="M 10 50 A 40 40 0 0 1 78 22" fill="none" stroke="var(--color-primary)" stroke-width="8" stroke-linecap="round"/>
+                                            <line x1="50" y1="50" x2="72" y2="26" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+                                            <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                                        </svg>
+                                        <span style="font-size: 0.65rem; color: var(--color-primary); font-weight: 800; margin-top: 0.4rem;">Optimal Alignment</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Ingestion Efficiency latency tile -->
+                                <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Orchestration Prep Efficiency</span>
+                                        <span style="font-size: 0.58rem; color: #10b981; font-weight: 700;">✓ Verified</span>
+                                    </div>
+                                    <p style="font-size: 0.6rem; color: var(--color-text-muted); margin: 0;">Clinical Ingestion pipelines hot-compile rules with near-zero latency.</p>
+                                    <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.6rem 0.85rem; display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
+                                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                                            <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Agent Orchestration Prep Time</span>
+                                            <span style="font-size: 0.85rem; font-weight: 800; color: #34d399;">12ms <span style="font-size: 0.62rem; font-weight: 500; color: var(--color-text-muted);">(Fast, Verified)</span></span>
+                                        </div>
+                                        <span style="background: rgba(16,185,129,0.15); color: #34d399; font-size: 0.55rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 4px; border: 1px solid rgba(16,185,129,0.25);">PASS</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Goal Scorecard -->
+                                <div style="background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                                    <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">CDO Goal Scorecard</span>
+                                    <div style="display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.2rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <span style="background: rgba(16,185,129,0.15); color: #34d399; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.6rem; font-weight: 800;">✓</span>
+                                            <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-text-main);">All strategic Briefs verified.</span>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                            <span style="background: rgba(16,185,129,0.15); color: #34d399; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.6rem; font-weight: 800;">✓</span>
+                                            <span style="font-size: 0.72rem; font-weight: 700; color: var(--color-text-main);">All strategic brief requirements verified.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Confirm Button at the bottom of the Card -->
+                            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border-color); flex-shrink: 0;">
+                                <button onclick="switchPhase(1)" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: white !important; border: none !important; padding: 0.8rem 1.5rem !important; border-radius: 30px !important; font-size: 0.8rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; width: 100% !important; cursor: pointer !important; transition: var(--transition-smooth) !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important; outline: none !important; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                                    <span>CONFIRM STRATEGIC BRIEF & PROCEED TO PHASE 1 (INGEST)</span>
+                                    <span>➔</span>
+                                </button>
+                                <button class="btn-link" onclick="switchPhase(-1)" style="background: none; border: none; color: var(--color-text-muted); font-size: 0.65rem; font-weight: 700; cursor: pointer; text-align: center; text-decoration: underline; outline: none;">Back to Intelligence Hub</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PHASE 1: INGESTION & ORCHESTRATION -->
+                <div class="phase-container" id="phase-1-view" style="display: none; flex-direction: column; flex: 1; min-height: 0; width: 100%;">
+                    
+                    <!-- Content Wrapper -->
+                    <div style="flex: 1; display: flex; flex-direction: column; height: 100%; min-height: 0; overflow: hidden; box-sizing: border-box; position: relative;">
+                        
+                        <!-- Grid Area below Tracker (Cleaned Redundant In-page Progress tracker) -->
+                        <div style="flex: 1; display: grid; grid-template-columns: 30% 70%; min-height: 0; overflow: hidden; width: 100%; margin-top: 1.25rem;">
+                            
+                            <!-- Column A: Input Options & Pipeline -->
+                            <div id="section-ingestion" style="display: flex; flex-direction: column; padding: 1.25rem 1.5rem; gap: 1.25rem; overflow-y: auto; box-sizing: border-box; border-right: 1px solid var(--border-color); background: var(--bg-surface);">
+
+                            <!-- Header Status Block -->
+                            <div style="background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 0.85rem; display: flex; align-items: center; gap: 0.65rem;">
+                                <div style="background: rgba(16,185,129,0.15); color: #34d399; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.8rem; font-weight: 800;">✓</div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-size: 0.82rem; font-weight: 800; color: var(--color-text-main);">SYSTEM READY - Phase 1</span>
+                                    <span style="font-size: 0.58rem; color: var(--color-text-muted);">Prerequisites complete; awaiting ingestion source selection.</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Stepper Compact Timeline -->
+                            <div style="display: flex; justify-content: space-between; gap: 0.4rem; background: rgba(0,0,0,0.15); padding: 0.4rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                                <!-- Step 1 -->
+                                <div class="pipeline-step active" id="step-ingestion" style="flex: 1; display: flex; flex-direction: column; gap: 0.25rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.3rem; width: 100%;">
+                                        <span class="step-num-mini" style="font-size: 0.62rem; font-weight: 800; background: var(--color-primary-glow); color: var(--color-primary); width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">1</span>
+                                        <span style="font-size: 0.58rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-main);">Ingest</span>
+                                        <span class="step-badge status-idle" id="badge-ingestion" style="font-size: 0.5rem; margin-left: auto; padding: 0.05rem 0.2rem; background: rgba(255,255,255,0.03); border-radius: 3px; border: 1px solid var(--border-color);">IDLE</span>
+                                    </div>
+                                    <div style="width: 100%; height: 2px; background: rgba(255,255,255,0.05); border-radius: 1px; overflow: hidden;">
+                                        <div class="progress-bar" id="progress-ingestion" style="width: 0%; height: 100%; background: var(--color-primary); transition: width 0.3s ease;"></div>
+                                    </div>
+                                </div>
+                                <!-- Step 2 -->
+                                <div class="pipeline-step" id="step-claims" style="flex: 1; display: flex; flex-direction: column; gap: 0.25rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.3rem; width: 100%;">
+                                        <span class="step-num-mini" style="font-size: 0.62rem; font-weight: 800; background: rgba(255,255,255,0.05); color: var(--color-text-muted); width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">2</span>
+                                        <span style="font-size: 0.58rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted);">Audit</span>
+                                        <span class="step-badge status-idle" id="badge-claims" style="font-size: 0.5rem; margin-left: auto; padding: 0.05rem 0.2rem; background: rgba(255,255,255,0.03); border-radius: 3px; border: 1px solid var(--border-color);">IDLE</span>
+                                    </div>
+                                    <div style="width: 100%; height: 2px; background: rgba(255,255,255,0.05); border-radius: 1px; overflow: hidden;">
+                                        <div class="progress-bar" id="progress-claims" style="width: 0%; height: 100%; background: var(--color-primary); transition: width 0.3s ease;"></div>
+                                    </div>
+                                </div>
+                                <!-- Step 3 -->
+                                <div class="pipeline-step" id="step-layout" style="flex: 1; display: flex; flex-direction: column; gap: 0.25rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.3rem; width: 100%;">
+                                        <span class="step-num-mini" style="font-size: 0.62rem; font-weight: 800; background: rgba(255,255,255,0.05); color: var(--color-text-muted); width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">3</span>
+                                        <span style="font-size: 0.58rem; font-weight: 800; text-transform: uppercase; color: var(--color-text-muted);">Heal</span>
+                                        <span class="step-badge status-idle" id="badge-layout" style="font-size: 0.5rem; margin-left: auto; padding: 0.05rem 0.2rem; background: rgba(255,255,255,0.03); border-radius: 3px; border: 1px solid var(--border-color);">IDLE</span>
+                                    </div>
+                                    <div style="width: 100%; height: 2px; background: rgba(255,255,255,0.05); border-radius: 1px; overflow: hidden;">
+                                        <div class="progress-bar" id="progress-layout" style="width: 0%; height: 100%; background: var(--color-primary); transition: width 0.3s ease;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- INPUT OPTIONS CARD -->
+                            <div class="cdo-metric-card" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; flex: 1;">
+                                <span class="gauge-label" style="font-size: 0.62rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase;">INPUT OPTIONS</span>
+                                
+                                <div class="dock-tabs" style="display: flex; border-bottom: 1px solid var(--border-color); padding-bottom: 0.35rem; gap: 0.5rem;">
+                                    <button class="dock-tab-btn active" onclick="switchDockTab('panel-file-url')" id="btn-tab-file-url" style="padding: 0.3rem 0.6rem; font-size: 0.68rem; font-weight: 700; border: none; background: none; color: var(--color-primary); border-bottom: 2px solid var(--color-primary); cursor: pointer; transition: var(--transition-smooth); outline: none;">📥 PPTX / PDF Ingest</button>
+                                    <button class="dock-tab-btn" onclick="switchDockTab('panel-briefs')" id="btn-tab-briefs" style="padding: 0.3rem 0.6rem; font-size: 0.68rem; font-weight: 700; border: none; background: none; color: var(--color-text-muted); cursor: pointer; transition: var(--transition-smooth); outline: none;">📁 Secure Briefs</button>
+                                    <button class="dock-tab-btn" onclick="switchDockTab('panel-webhook')" id="btn-tab-webhook" style="padding: 0.3rem 0.6rem; font-size: 0.68rem; font-weight: 700; border: none; background: none; color: var(--color-text-muted); cursor: pointer; transition: var(--transition-smooth); outline: none;">Label Sync</button>
+                                </div>
+                                
+                                <div class="dock-tab-contents" style="position: relative; flex: 1; display: flex; flex-direction: column; gap: 0.75rem; min-height: 0;">
+                                    <!-- Panel 1: PPTX/PDF uploader -->
+                                    <div class="dock-panel" id="panel-file-url" style="display: flex; flex-direction: column; gap: 0.5rem; height: 100%;">
+                                        <div class="pptx-dropzone" id="pptx-dropzone" ondragover="event.preventDefault()" ondrop="handleDrop(event)" onclick="triggerFileInput()" style="flex: 1; min-height: 120px;">
+                                            <input type="file" id="canvas-file-input" style="display: none;" accept=".pptx,.pdf" onchange="handleFileSelect(event)">
+                                            <span style="font-size: 1.35rem;">📥</span>
+                                            <span style="font-weight: 800; font-size: 0.72rem; color: var(--color-text-main);">Upload PowerPoint / PDF Document</span>
+                                        </div>
+                                        <div style="text-align: center; font-size: 0.55rem; color: var(--color-text-muted); font-weight: 800; margin: 0.15rem 0;">— OR —</div>
+                                        <div style="display: flex; flex-direction: column; gap: 0.45rem; width: 100%;">
+                                            <select id="url-preset-select" onchange="handlePresetSelectChange(this)" style="width: 100%; font-size: 0.68rem; padding: 0.45rem 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); color: var(--color-text-main); outline: none; font-weight: 600; cursor: pointer; box-sizing: border-box;">
+                                                <option value="" disabled selected>Select Prescribing Label...</option>
+                                                <option value="datasets/WELIREG_FDA_Approved_Label_2026.txt">WELIREG® FDA Label 2026 (HIF-2α Inh)</option>
+                                                <option value="datasets/KEYTRUDA_Prescribing_Information_NSCLC.txt">KEYTRUDA® NSCLC Prescribing Info</option>
+                                                <option value="datasets/LITESPARK-005_Trial_Data_Briefing.txt">LITESPARK-005 Trial Data (Briefing)</option>
+                                                <option value="CUSTOM">Input Custom Clinical URL...</option>
+                                            </select>
+                                            
+                                            <!-- Custom text input for custom clinical labels -->
+                                            <input type="text" id="url-custom-input" placeholder="Enter custom FDA Label URL..." style="display: none; width: 100%; font-size: 0.68rem; padding: 0.45rem 0.6rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); color: var(--color-text-main); outline: none; box-sizing: border-box;">
+                                            
+                                            <!-- Hidden input storing target URL -->
+                                            <input type="hidden" id="url-ingest-input" value="">
+                                            
+                                            <!-- URL Verification Panel -->
+                                            <div id="url-verification-panel" style="display: none; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-radius: 6px; padding: 0.45rem 0.6rem; font-size: 0.62rem; color: #34d399; margin-top: 0.2rem; box-sizing: border-box;">
+                                                <span style="font-weight: 700;">✓ Verified Clinical Source:</span>
+                                                <a id="url-external-link" href="#" target="_blank" style="color: var(--color-primary); text-decoration: underline; font-weight: 700; margin-top: 0.15rem; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><span id="url-display-text"></span></a>
+                                            </div>
+
+                                            <button class="btn btn-primary" onclick="fetchAndIngestUrl()" style="padding: 0.45rem 0.85rem; font-size: 0.68rem; font-weight: 700; border-radius: 6px; background: var(--color-primary) !important; color: white !important; border: none; cursor: pointer; width: 100%; text-transform: uppercase;">Ingest Selected Label</button>
+                                        </div>
+                                    </div>
+                                    <!-- Panel 2: Secure Briefs -->
+                                    <div class="dock-panel" id="panel-briefs" style="display: none; flex-direction: column; gap: 0.4rem;">
+                                        <p style="font-size: 0.62rem; color: var(--color-text-muted); margin: 0;">Select a pre-loaded, cryptographically verified clinical brief:</p>
+                                        <div class="brief-item" style="padding: 0.5rem 0.65rem; background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-radius: 6px; display: flex; align-items: center; justify-content: space-between; cursor: pointer;" onclick="loadPresetBrief('datasets/LITESPARK-005_Welireg_Briefing.json')">
+                                            <span style="font-size: 0.68rem; font-weight: 700; color: var(--color-text-main);">📄 LITESPARK-005 Welireg Briefing</span>
+                                            <span style="font-size: 0.52rem; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.1rem 0.3rem; border-radius: 4px; font-weight: 800;">VERIFIED</span>
+                                        </div>
+                                    </div>
+                                    <!-- Panel 3: Label Sync Webhook -->
+                                    <div class="dock-panel" id="panel-webhook" style="display: none; flex-direction: column; gap: 0.4rem;">
+                                        <p style="font-size: 0.62rem; color: var(--color-text-muted); margin: 0;">Listen for real-time FDA labeling updates via secure webhooks:</p>
+                                        <div style="background: var(--bg-surface-solid); border: 1px solid var(--border-color); padding: 0.5rem; border-radius: 6px; font-family: monospace; font-size: 0.58rem; color: var(--color-primary); word-break: break-all;">
+                                            https://maestro.clinicalsolutions.com/api/v1/sync-webhook
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom Action Navigation (Bilateral Navigation!) -->
+                            <div style="display: flex; gap: 0.6rem; margin-top: auto; padding-top: 0.5rem; border-top: 1px solid var(--border-color); flex-shrink: 0; align-items: center; width: 100%;">
+                                <button onclick="switchPhase(-1)" style="background: rgba(255,255,255,0.03) !important; color: var(--color-text-muted) !important; border: 1px solid var(--border-color) !important; padding: 0.7rem 1.2rem !important; border-radius: 30px !important; font-size: 0.76rem !important; font-weight: 700 !important; cursor: pointer !important; transition: var(--transition-smooth) !important; display: flex; align-items: center; justify-content: center; gap: 0.3rem;" onmouseover="this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
+                                    <span>⬅ Back</span>
+                                </button>
+                                <button onclick="switchPhase(2)" style="flex: 1; background: linear-gradient(135deg, var(--color-primary) 0%, #0d9488 100%) !important; color: white !important; border: none !important; padding: 0.7rem 1.5rem !important; border-radius: 30px !important; font-size: 0.8rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; cursor: pointer !important; transition: var(--transition-smooth) !important; box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25) !important; outline: none !important; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                                    <span>[PROCEED TO CREATIVE COMPOSER] ➔</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Column B: Chat Command Deck & Logs -->
+                        <div id="section-orchestration" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+                            <!-- Floating Creative Canvas Trigger on the far right edge -->
+                            <div class="phase-connector-card" onclick="switchPhase(2)" title="Proceed to Phase 2 Creative Composer" style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-right: none; padding: 0.75rem 0.5rem; border-radius: 8px 0 0 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; cursor: pointer; z-index: 99; transition: var(--transition-smooth); box-shadow: var(--shadow-lg);" onmouseover="this.style.background='var(--bg-surface)'" onmouseout="this.style.background='var(--bg-surface-solid)'">
+                                <span style="font-size: 1rem;">🎨</span>
+                                <span style="font-size: 0.55rem; font-weight: 800; text-transform: uppercase; writing-mode: vertical-rl; text-orientation: mixed; color: var(--color-primary); letter-spacing: 0.5px;">Creative Canvas</span>
+                                <span style="font-size: 0.65rem; color: var(--color-primary); margin-top: 0.25rem;">➔</span>
+                            </div>
+
+                            <div class="chat-section" style="padding: 1.5rem !important; flex: 1; display: flex; flex-direction: column; box-sizing: border-box; justify-content: space-between;">
+                                <div class="panel-header-compact" style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <span class="panel-icon">💬</span>
+                                        <h3 style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-main); margin: 0;"><span style="color: var(--color-primary); margin-right: 0.2rem;">STEP 01.</span> CLINICAL INGESTION COMMAND</h3>
+                                    </div>
+                                </div>
+                                
+                                 <!-- Chat Area Container -->
+                                 <div class="chat-messages" id="chat-messages-phase1" style="flex: 1; overflow-y: auto; margin-bottom: 1rem; min-height: 0;">
+                                     <div class="chat-bubble assistant" style="padding: 1.25rem 1.5rem !important; font-size: 0.95rem !important; line-height: 1.65 !important; width: 100%; max-width: 100% !important; box-sizing: border-box;">
+                                         <p style="font-weight: 800; margin: 0 0 0.5rem 0; font-size: 1.15rem !important;">Welcome, Global Pharma Team.</p>
+                                         <p style="margin: 0 0 0.75rem 0;">I am the <strong>Master Orchestrator Agent</strong>. Ingest clinical briefs, prescribing labels, or PowerPoint presentations on the left, and I will harvest compliant claims, generate variants, and coordinate safety audits.</p>
+                                         <p style="font-weight: 700; font-size: 0.82rem; color: var(--color-text-muted); margin: 0 0 0.45rem 0; text-transform: uppercase; letter-spacing: 0.5px;">Quick Actions:</p>
+                                         <div class="quick-prompts" style="display: flex; flex-direction: column; gap: 0.4rem; width: 100%;">
+                                             <button class="btn-quick-prompt" onclick="setPromptAndSubmit('Generate a clinical marketing draft for Product-A oncology indications targeting adults.')" style="padding: 0.6rem 1.1rem !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 8px !important; border: 1px solid var(--border-color) !important; background: rgba(255,255,255,0.02) !important; color: var(--color-primary) !important; cursor: pointer; text-align: left !important; width: 100% !important; display: block !important; box-sizing: border-box !important; outline: none;">✨ Ingest Product-A Trial Data Brief</button>
+                                             <button class="btn-quick-prompt" onclick="setPromptAndSubmit('Audit the active variants against FDA OPDP 2026 guidelines.')" style="padding: 0.6rem 1.1rem !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 8px !important; border: 1px solid var(--border-color) !important; background: rgba(255,255,255,0.02) !important; color: var(--color-text-muted) !important; cursor: pointer; text-align: left !important; width: 100% !important; display: block !important; box-sizing: border-box !important; outline: none;">🛡️ Audit Claim for FCC Compliance</button>
+                                             <button class="btn-quick-prompt" onclick="setPromptAndSubmit('Compile and verify proof package for Variant 1.')" style="padding: 0.6rem 1.1rem !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 8px !important; border: 1px solid var(--border-color) !important; background: rgba(255,255,255,0.02) !important; color: var(--color-text-muted) !important; cursor: pointer; text-align: left !important; width: 100% !important; display: block !important; box-sizing: border-box !important; outline: none;">🧪 Synthesize New Proof Package</button>
+                                             <button class="btn-quick-prompt" onclick="setPromptAndSubmit('Generate Product-A Campaign Draft')" style="padding: 0.6rem 1.1rem !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 8px !important; border: 1px solid var(--border-color) !important; background: rgba(255,255,255,0.02) !important; color: var(--color-text-muted) !important; cursor: pointer; text-align: left !important; width: 100% !important; display: block !important; box-sizing: border-box !important; outline: none;">🔍 Generate Product-A Campaign Draft</button>
+                                         </div>
+                                     </div>
+                                 </div>
+                                
+                                <!-- Console Logs Terminal -->
+                                <div class="chat-console" style="margin-bottom: 1rem; flex-shrink: 0;">
+                                    <div class="console-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>AGENT EXECUTION CONSOLE LOGS</span>
+                                        <span style="color: #34d399; font-weight: 800; font-size: 0.55rem; letter-spacing: 0.5px;">● ACTIVE TELEMETRY</span>
+                                    </div>
+                                    <div class="console-body" id="console-body-phase1" style="height: 95px; font-size: 0.62rem !important; line-height: 1.4 !important;">
+                                        <div class="console-line system">[6:19:35 PM] [Master Orchestrator]: Connected to Vertex AI ADK orchestrator. Awaiting input...</div>
+                                        <div class="console-line system">[6:19:35 PM] [Master Orchestrator]: Switched Ingestion created. Ready to harvest claims.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Floating Prompt Input Pill -->
+                                <form class="chat-input-form" id="chat-form-phase1" onsubmit="submitChat(event)" style="flex-shrink: 0; padding: 0.5rem 1rem !important; margin: 0 !important; box-sizing: border-box; width: 100%;">
+                                    <input type="text" id="chat-input-phase1" placeholder="Describe clinical campaign or instruct master agent..." autocomplete="off" required style="outline: none; font-size: 0.88rem !important; flex: 1; padding: 0.4rem 0.6rem !important;">
+                                    <button type="submit" id="btn-submit-phase1" style="padding: 0.45rem 1.1rem; font-size: 0.72rem; border-radius: 20px; display: flex; align-items: center; gap: 0.3rem; outline: none; border: none; cursor: pointer;">
+                                        <span>Send</span>
+                                        <span class="spinner" id="btn-spinner-phase1" style="display: none; width: 8px; height: 8px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- PHASE 2: CREATIVE COMPOSER WORKBENCH -->
+                <div class="phase-container" id="phase-2-view" style="display: none; flex-direction: column; flex: 1; min-height: 0; width: 100%;">
+                    
+                    <!-- Content Wrapper -->
+                    <div style="flex: 1; display: flex; flex-direction: column; height: 100%; min-height: 0; overflow: hidden; box-sizing: border-box; position: relative;">
+                        
+                        <!-- 3-Column Grid below Tracker (Cleaned Redundant In-page Progress tracker) -->
+                        <div style="flex: 1; display: grid; grid-template-columns: 30% 1fr 360px; min-height: 0; overflow: hidden; width: 100%; margin-top: 1.25rem;">
+                        
+                        <!-- Column 1: Agent Orchestrator Command Deck -->
+                        <div style="border-right: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="chat-section" style="padding: 1.25rem !important; height: 100%; display: flex; flex-direction: column; box-sizing: border-box; justify-content: space-between;">
+                                <div class="panel-header-compact" style="margin-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                    <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                        <span class="panel-icon">💬</span>
+                                        <h3 style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-main); margin: 0;"><span style="color: var(--color-primary); margin-right: 0.2rem;">02.</span> AGENT ORCHESTRATION</h3>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-messages" id="chat-messages-phase2" style="flex: 1; overflow-y: auto; gap: 0.85rem !important; margin-bottom: 0.85rem !important; min-height: 0;">
+                                    <div class="chat-bubble assistant" style="padding: 1.25rem 1.5rem !important; font-size: 0.95rem !important; line-height: 1.65 !important; width: 100%; max-width: 100% !important; box-sizing: border-box;">
+                                        <p style="font-weight: 800; margin: 0 0 0.3rem 0; font-size: 1.15rem !important;">Master Orchestrator Agent</p>
+                                        <p style="margin: 0 0 0.6rem 0;" id="orchestration-agent-desc">Clinical brief ingestion complete. Compliant claims successfully harvested from KEYNOTE-189 Prescribing Information. Awaiting editorial review and rule compilation.</p>
+                                        <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.45rem; width: 100%;">
+                                            <button class="btn-quick-prompt" onclick="setPromptAndSubmit('Translate the active variants to French.')" style="padding: 0.6rem 1.1rem !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 8px !important; border: 1px solid var(--border-color) !important; background: rgba(255,255,255,0.02) !important; color: var(--color-primary) !important; cursor: pointer; text-align: left !important; width: 100% !important; display: block !important; box-sizing: border-box !important; outline: none;">+ [Translator - FR]</button>
+                                            <button class="btn-quick-prompt" onclick="setPromptAndSubmit('Compile and run layout compliance audit.')" style="padding: 0.6rem 1.1rem !important; font-size: 0.88rem !important; font-weight: 700 !important; border-radius: 8px !important; border: 1px solid var(--border-color) !important; background: rgba(255,255,255,0.02) !important; color: var(--color-primary) !important; cursor: pointer; text-align: left !important; width: 100% !important; display: block !important; box-sizing: border-box !important; outline: none;">+ [Compile Layout Audit]</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chat-console" style="margin-bottom: 0.85rem !important; flex-shrink: 0;">
+                                    <div class="console-header">AGENT EXECUTION CONSOLE LOGS</div>
+                                    <div class="console-body" id="console-body-phase2" style="height: 85px; font-size: 0.62rem !important; line-height: 1.4 !important;">
+                                        <div class="console-line system">[6:19:35 PM] [Master Orchestrator]: Switched Ingestion created.</div>
+                                        <div class="console-line system">[6:19:36 PM] [Master Orchestrator]: Focus active: Creative Composer Workbench.</div>
+                                    </div>
+                                </div>
+                                
+                                <form class="chat-input-form" id="chat-form-phase2" onsubmit="submitChat(event)" style="padding: 0.45rem 0.85rem !important; margin: 0 !important; box-sizing: border-box; width: 100%; flex-shrink: 0;">
+                                    <input type="text" id="chat-input-phase2" placeholder="Describe clinical campaign or instruct..." autocomplete="off" required style="font-size: 0.88rem !important; outline: none; flex: 1; padding: 0.4rem 0.6rem !important;">
+                                    <button type="submit" id="btn-submit-phase2" style="padding: 0.4rem 0.9rem !important; font-size: 0.68rem !important; border-radius: 15px !important; display: flex; align-items: center; gap: 0.25rem; border: none; cursor: pointer;">
+                                        <span>Send</span>
+                                        <span class="spinner" id="btn-spinner-phase2" style="display: none; width: 8px; height: 8px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2: Creative Composer Workbench (Widescreen Dynamic Canvas) -->
+                        <div style="display: flex; flex-direction: column; overflow: hidden;" id="section-composer">
+                            <div class="strategic-dashboard-grid" style="padding: 1.25rem !important; flex: 1; display: flex; flex-direction: column; box-sizing: border-box; justify-content: space-between;">
+                                
+                                <div class="panel-header-compact" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-shrink: 0;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <span class="panel-icon">🎨</span>
+                                        <h3 style="font-size: 0.88rem; font-weight: 800; color: var(--color-text-main); margin: 0;"><span style="color: var(--color-primary); margin-right: 0.25rem;">03.</span> CREATIVE COMPOSER WORKBENCH</h3>
+                                    </div>
+                                    <span class="badge-verified" style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.2); font-size: 0.58rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 20px;">✓ Verified</span>
+                                </div>
+                                
+                                <!-- Dynamic Composer Card Sheet -->
+                                <div class="workspace-panel" id="composer-card-sheet" style="padding: 1.25rem; border-radius: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; flex: 1; min-height: 0;">
+                                    
+                                    <!-- Campaign Variant Tabs & Actions Toolbar Row -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; flex-shrink: 0;">
+                                        <div class="variant-pills" id="composer-variant-pills" style="display: flex; gap: 0.4rem; background: var(--bg-surface-solid); padding: 0.2rem; border-radius: 20px; border: 1px solid var(--border-color);">
+                                            <button class="variant-tab-btn active" id="variant-tab-1" onclick="loadVariant(1)">Variant (-A)</button>
+                                            <button class="variant-tab-btn" id="variant-tab-2" onclick="loadVariant(2)">Variant (-C)</button>
+                                            <button class="variant-tab-btn" id="variant-tab-3" onclick="loadVariant(3)">Variant (-B)</button>
+                                        </div>
+                                        
+                                        <!-- Campaign Actions Toolbar -->
+                                        <div style="display: flex; gap: 0.4rem; align-items: center;">
+                                            <button class="btn btn-primary btn-small" id="btn-edit-copy" onclick="toggleEditMode()" style="padding: 0.35rem 0.75rem; font-size: 0.65rem; font-weight: 700; border-radius: 6px; cursor: pointer;">Edit Copy</button>
+                                            <button class="btn btn-secondary" onclick="exportComplianceVaultPackage()" style="padding: 0.35rem 0.75rem; font-size: 0.65rem; font-weight: 700; border-radius: 6px; cursor: pointer; outline: none;">📄 Export to PromoMats</button>
+                                            <button class="btn btn-secondary" onclick="openFda2253Modal()" style="padding: 0.35rem 0.75rem; font-size: 0.65rem; font-weight: 700; border-radius: 6px; cursor: pointer; outline: none;">💼 Compile FDA 2253</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Dynamic Marketing Canvas Wrapper (Widescreen Restored!) -->
+                                    <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%; flex: 1; min-height: 0; position: relative;">
+                                        <!-- Outer wrapper satisfying canvas-render-block (main borders and padding) -->
+                                        <div id="canvas-render-block" style="width: 100%; height: 100%; border-radius: 12px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); padding: 0; box-sizing: border-box; position: relative; display: flex; flex-direction: column; flex: 1; min-height: 480px; overflow: hidden; box-shadow: var(--shadow-lg);">
+                                            
+                                            <!-- Dynamic canvas-placeholder (floats over the entire card until loaded) -->
+                                            <div id="canvas-placeholder" style="display: flex; align-items: center; justify-content: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-surface-solid); z-index: 10; border-radius: 12px; box-sizing: border-box;">
+                                                <div style="text-align: center; display: flex; flex-direction: column; gap: 0.5rem; align-items: center;">
+                                                    <span style="font-size: 2.2rem; animation: pulse 2s infinite;">🎨</span>
+                                                    <span style="font-size: 0.88rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Awaiting Ingestion Stream...</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- 1. Email Card Header: Subject & Preheader Inputs Row -->
+                                            <div class="composer-sheet-inputs" style="padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.65rem; background: var(--bg-surface); border-radius: 12px 12px 0 0; flex-shrink: 0; box-sizing: border-box;">
+                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                    <span style="font-size: 0.76rem; font-weight: 800; color: var(--color-text-muted); width: 85px; text-transform: uppercase; letter-spacing: 0.5px;">Subject:</span>
+                                                    <input type="text" id="composer-subject-input" style="flex: 1; padding: 0.45rem 0.65rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.82rem; font-weight: 700; background: rgba(0,0,0,0.2); color: var(--color-text-main); outline: none;" value="">
+                                                </div>
+                                                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                                    <span style="font-size: 0.76rem; font-weight: 800; color: var(--color-text-muted); width: 85px; text-transform: uppercase; letter-spacing: 0.5px;">Preheader:</span>
+                                                    <input type="text" id="composer-preheader-input" style="flex: 1; padding: 0.45rem 0.65rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.78rem; background: rgba(0,0,0,0.2); color: var(--color-text-muted); outline: none;" value="">
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- 2. Email Card Body: Imagen 3 Hero Graphic Block (Widescreen Uncropped!) -->
+                                            <div class="composer-hero-container" style="position: relative; width: 100%; height: 320px; background: #090d16; overflow: hidden; cursor: pointer; border-bottom: 1px solid var(--border-color); flex-shrink: 0; box-sizing: border-box; display: flex; align-items: center; justify-content: center;" onclick="openImagenModal()">
+                                                <img src="./product_a_clinical_hero.png" id="composer-hero-image" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; transition: filter 0.3s ease;" alt="Clinical Hero Asset">
+                                                <div class="composer-hero-overlay">
+                                                    <span class="composer-hero-overlay-btn" style="background: var(--color-primary); color: white; padding: 0.5rem 1.25rem; border-radius: 20px; font-size: 0.78rem; font-weight: 800; border: 1px solid rgba(255,255,255,0.2); box-shadow: var(--shadow-md); letter-spacing: 0.3px;">✨ Generate / Edit Image (Imagen 3)</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- 3. Email Card Body Copy: Live Compliant Ingestion Content -->
+                                            <div class="composer-content-body" id="composer-content-body" style="padding: 1.5rem; overflow-y: auto; font-family: 'Inter', sans-serif; font-size: 0.88rem; line-height: 1.65; color: var(--color-text-main); flex: 1; min-height: 0; box-sizing: border-box;">
+                                                <!-- Dynamic variant layout template injected here! -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Column 3: AI Governance & Active Proof Sidebar -->
+                        <div style="border-left: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="strategic-dashboard-grid" style="padding: 1.25rem !important; gap: 0.85rem !important; flex: 1; display: flex; flex-direction: column; box-sizing: border-box; justify-content: space-between;">
+                                
+                                <!-- Safety Index Shield Card -->
+                                <div class="cdo-metric-card" style="padding: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem; background: linear-gradient(180deg, rgba(16,185,129,0.03) 0%, rgba(0,0,0,0) 100%); flex-shrink: 0;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span class="gauge-label" style="font-size: 0.62rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase;">ACTIVE PROOF SAFETY INDEX</span>
+                                        <span style="font-size: 0.55rem; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.1rem 0.3rem; border-radius: 4px; font-weight: 800;" id="compliance-status-ok">PASS</span>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.25rem;">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <span style="font-size: 1.15rem; font-weight: 800; color: #10b981; font-family: 'Outfit';" id="compliance-safety-score">100%</span>
+                                            <span style="font-size: 0.52rem; color: var(--color-text-muted);">Compliance Score</span>
+                                        </div>
+                                        <div style="width: 80px; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                                            <div id="compliance-safety-bar" style="width: 100%; height: 100%; background: #10b981; transition: width 0.3s ease;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Dynamic warning banner placeholders -->
+                                    <div id="compliance-warning-block" style="display: none; background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); border-radius: 4px; padding: 0.35rem; margin-top: 0.25rem; font-size: 0.58rem; color: #f87171;">
+                                        <span id="compliance-warning-text"></span>
+                                    </div>
+
+                                    <!-- Mini canvases for safety charts -->
+                                    <div style="display: none;">
+                                        <canvas id="efficacyChart" width="10" height="10"></canvas>
+                                        <canvas id="safetyChart" width="10" height="10"></canvas>
+                                        <canvas id="complianceChart" width="10" height="10"></canvas>
+                                    </div>
+
+                                    <!-- Stepper mini check-badges (De-congested, One Item Per Line!) -->
+                                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                                        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700; color: var(--color-text-main);">
+                                            <span id="shield-check-claims" style="color: #10b981; font-weight: 800; font-size: 0.75rem;">✓</span> Claims Verify
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700; color: var(--color-text-main);">
+                                            <span id="shield-check-typography" style="color: #10b981; font-weight: 800; font-size: 0.75rem;">✓</span> Typography
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700; color: var(--color-text-main);">
+                                            <span id="shield-check-disclaimer" style="color: #10b981; font-weight: 800; font-size: 0.75rem;">✓</span> Disclosures
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700; color: var(--color-text-main);">
+                                            <span id="shield-check-layout" style="color: #10b981; font-weight: 800; font-size: 0.75rem;">✓</span> Brand Layout
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 700; color: var(--color-text-main);">
+                                            <span id="shield-check-watermark" style="color: #10b981; font-weight: 800; font-size: 0.75rem;">✓</span> Watermarked
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Dynamic Tab Switcher for right-side panels -->
+                                <div style="display: flex; border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; gap: 0.4rem; margin-top: 0.2rem; flex-shrink: 0;">
+                                    <button class="dock-tab-btn active" onclick="switchRightTab('claims')" id="btn-tab-claims" style="padding: 0.25rem 0.5rem; font-size: 0.62rem; font-weight: 700; border: none; background: none; color: var(--color-primary); border-bottom: 2px solid var(--color-primary); cursor: pointer; outline: none;">Claims</button>
+                                    <button class="dock-tab-btn" onclick="switchRightTab('standards')" id="btn-tab-standards" style="padding: 0.25rem 0.5rem; font-size: 0.62rem; font-weight: 700; border: none; background: none; color: var(--color-text-muted); cursor: pointer; outline: none;">Standards</button>
+                                    <button class="dock-tab-btn" onclick="switchRightTab('export')" id="btn-tab-export" style="padding: 0.25rem 0.5rem; font-size: 0.62rem; font-weight: 700; border: none; background: none; color: var(--color-text-muted); cursor: pointer; outline: none;">Export</button>
+                                </div>
+                                
+                                <!-- Tab panel containers -->
+                                <div style="flex: 1; min-height: 0; overflow-y: auto; position: relative; margin-top: 0.4rem; display: flex; flex-direction: column;">
+                                    
+                                    <!-- TAB PANEL A: Claims Registry -->
+                                    <div class="rtab-panel active-rtab" id="rtab-panel-claims" style="display: flex; flex-direction: column; gap: 0.5rem; height: 100%; min-height: 0;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                            <span style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px;">ACTIVE HARVESTED CLAIMS</span>
+                                            <span style="font-size: 0.55rem; background: var(--bg-surface-solid); border: 1px solid var(--border-color); padding: 0.05rem 0.25rem; border-radius: 4px;" id="active-label-tag">Active: Week 24 Label (56%)</span>
+                                        </div>
+                                        
+                                        <!-- Container where claims are dynamically loaded -->
+                                        <div id="claims-registry-container" style="display: flex; flex-direction: column; gap: 0.4rem; overflow-y: auto; flex: 1; min-height: 0;">
+                                            <!-- Dynamically populated by app.js! -->
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- TAB PANEL B: Standards Registry -->
+                                    <div class="rtab-panel" id="rtab-panel-standards" style="display: none; flex-direction: column; gap: 0.6rem; height: 100%; min-height: 0;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                            <span style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase;">Standards Registry Version</span>
+                                            <span class="badge badge-version" id="active-standards-version-badge" style="font-size: 0.55rem; font-weight: 800; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.05rem 0.25rem; border-radius: 4px;">v1.2</span>
+                                        </div>
+                                        <div style="font-family: monospace; font-size: 0.55rem; color: var(--color-primary); background: var(--bg-surface-solid); border: 1px solid var(--border-color); padding: 0.4rem; border-radius: 6px; word-break: break-all; flex-shrink: 0;" id="active-standards-hash-display">
+                                            sha256:d8b02ea9a8f4c4c8d18471c2a18490e5a8...
+                                        </div>
+                                        
+                                        <!-- Rule compiler prompt area -->
+                                        <div style="display: flex; flex-direction: column; gap: 0.3rem; flex-shrink: 0;">
+                                            <label for="rule-compiler-prompt" style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase;">Natural Language Rule Compiler</label>
+                                            <textarea id="rule-compiler-prompt" placeholder="Describe layout, font, or branding compliance changes in natural language..." style="width: 100%; height: 80px; font-size: 0.68rem; padding: 0.45rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); color: var(--color-text-main); outline: none; box-sizing: border-box; resize: none; font-family: 'Inter', sans-serif;"></textarea>
+                                        </div>
+                                        
+                                        <!-- Compiler metadata inputs -->
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; flex-shrink: 0;">
+                                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                                <span style="font-size: 0.52rem; font-weight: 800; color: var(--color-text-muted);">Author</span>
+                                                <input type="text" id="rule-compiler-author" value="Lead Designer" style="font-size: 0.62rem; padding: 0.3rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); color: var(--color-text-main); outline: none;">
+                                            </div>
+                                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                                <span style="font-size: 0.52rem; font-weight: 800; color: var(--color-text-muted);">Version Label</span>
+                                                <input type="text" id="rule-compiler-version" value="v1.3" style="font-size: 0.62rem; padding: 0.3rem; border-radius: 4px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); color: var(--color-text-main); outline: none;">
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Compilation triggers -->
+                                        <div style="display: flex; gap: 0.4rem; margin-top: 0.2rem; flex-shrink: 0;">
+                                            <button class="btn btn-primary" id="btn-trigger-update" onclick="compileAndPromoteRule()" style="flex: 1; padding: 0.45rem 0.85rem; font-size: 0.68rem; font-weight: 700; border-radius: 6px; cursor: pointer; text-transform: uppercase;">Compile Rules</button>
+                                            <button class="btn btn-secondary" id="btn-promote-rule" style="flex: 1; padding: 0.45rem 0.85rem; font-size: 0.68rem; font-weight: 700; border-radius: 6px; cursor: pointer; text-transform: uppercase; display: none;">Promote</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- TAB PANEL C: Campaign Export -->
+                                    <div class="rtab-panel" id="rtab-panel-export" style="display: none; flex-direction: column; gap: 0.6rem; height: 100%; min-height: 0;">
+                                        <span style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; flex-shrink: 0;">Export Campaign Assets</span>
+                                        <div style="display: flex; flex-direction: column; gap: 0.45rem; flex-shrink: 0;">
+                                            <button class="btn btn-secondary" id="export-compliance_vault-variant" style="width: 100%; text-align: left; padding: 0.5rem 0.75rem; font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: space-between; border-radius: 6px; cursor: pointer; outline: none;">
+                                                <span>📄 Export Current Variant</span>
+                                                <span style="color: var(--color-primary);">➔</span>
+                                            </button>
+                                            <button class="btn btn-secondary" id="export-compliance_vault-project" style="width: 100%; text-align: left; padding: 0.5rem 0.75rem; font-size: 0.68rem; font-weight: 700; display: flex; align-items: center; justify-content: space-between; border-radius: 6px; cursor: pointer; outline: none;">
+                                                <span>📂 Export Full Project Package</span>
+                                                <span style="color: var(--color-primary);">➔</span>
+                                            </button>
+                                            <button class="btn btn-secondary" id="btn-export-compliance_vault" style="display: none;"></button>
+                                            <button class="btn btn-secondary" id="btn-compliance_vault-export-contentstudio" style="display: none;"></button>
+                                        </div>
+                                        
+                                        <!-- Veeva Sync Gateway -->
+                                        <div style="margin-top: 0.6rem; border-top: 1px solid var(--border-color); padding-top: 0.6rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; min-height: 0;">
+                                            <span style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; flex-shrink: 0;">VEEVA PROMOMATS SYNC</span>
+                                            <div style="background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.6rem; display: flex; flex-direction: column; gap: 0.4rem; position: relative; flex: 1;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                                    <span style="font-size: 0.65rem; font-weight: 700; color: var(--color-text-main);">PromoMats Gateway</span>
+                                                    <span style="font-size: 0.52rem; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.05rem 0.2rem; border-radius: 3px; font-weight: 800;">READY</span>
+                                                </div>
+                                                <button class="btn btn-primary" id="btn-modal-veeva-sync" onclick="triggerVeevaSync()" style="width: 100%; padding: 0.45rem 0.85rem; font-size: 0.68rem; font-weight: 700; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.3rem; outline: none; border: none; margin-top: auto; flex-shrink: 0;">
+                                                    <span>Sync to Veeva PromoMats</span>
+                                                    <span class="spinner" id="veeva-sync-spinner" style="display: none; width: 8px; height: 8px; border: 2px solid white; border-top: 2px solid transparent; border-radius: 50%; animation: spin 1s linear infinite;"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Confirm and Proceed Phase 3 Action Button (Bilateral Navigation!) -->
+                                <div style="display: flex; gap: 0.6rem; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid var(--border-color); flex-shrink: 0; width: 100%; align-items: center;">
+                                    <button onclick="switchPhase(1)" style="background: rgba(255,255,255,0.03) !important; color: var(--color-text-muted) !important; border: 1px solid var(--border-color) !important; padding: 0.75rem 1.2rem !important; border-radius: 30px !important; font-size: 0.76rem !important; font-weight: 700 !important; cursor: pointer !important; transition: var(--transition-smooth) !important; display: flex; align-items: center; justify-content: center; gap: 0.3rem;" onmouseover="this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
+                                        <span>⬅ Back</span>
+                                    </button>
+                                    <button onclick="switchPhase(3)" style="flex: 1; background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: white !important; border: none !important; padding: 0.75rem 1.5rem !important; border-radius: 30px !important; font-size: 0.8rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; cursor: pointer !important; transition: var(--transition-smooth) !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important; outline: none !important; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                                        <span id="phase2-bottom-button-text">[Confirm Variant 1 and Proceed to Final Submission (Phase 3)]</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- PHASE 3: GOVERNANCE & DELIVERY -->
+                <div class="phase-container" id="phase-3-view" style="display: none; flex-direction: column; flex: 1; min-height: 0; width: 100%;">
+                    
+                    <!-- Content Wrapper -->
+                    <div style="flex: 1; display: flex; flex-direction: column; height: 100%; min-height: 0; overflow: hidden; box-sizing: border-box; position: relative;">
+                        
+                        <!-- 3-Column Grid below Tracker (Cleaned Redundant In-page Progress tracker) -->
+                        <div style="flex: 1; display: grid; grid-template-columns: 30% 1fr 345px; min-height: 0; overflow: hidden; width: 100%; margin-top: 1.25rem;" id="section-governance">
+                        
+                        <!-- Column 1: Context Summary & Historical Logs (De-congested!) -->
+                        <div style="border-right: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="strategic-dashboard-grid" style="padding: 1.25rem !important; gap: 0.85rem !important; height: 100%; display: flex; flex-direction: column; box-sizing: border-box;">
+                                
+                                <!-- Panel Header -->
+                                <div class="panel-header-compact" style="margin-bottom: 0.1rem; display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;">
+                                    <span class="panel-icon">💬</span>
+                                    <h3 style="font-size: 0.78rem; font-weight: 700; color: var(--color-text-main); margin: 0;"><span style="color: var(--color-primary); margin-right: 0.2rem;">04.</span> PHASE SUMMARIES</h3>
+                                </div>
+                                
+                                <!-- Phase Summaries Container (Fixed Height at top!) -->
+                                <div style="display: flex; flex-direction: column; gap: 0.9rem; flex-shrink: 0;">
+                                    <!-- Mini Phase 1 Ingest card -->
+                                    <div class="cdo-metric-card" style="padding: 0.95rem; display: flex; flex-direction: column; gap: 0.65rem; background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-text-main); text-transform: uppercase; letter-spacing: 0.3px;">Phase 1 Ingest</span>
+                                            <span style="font-size: 0.58rem; background: rgba(16, 185, 129, 0.08); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.15); font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 20px;">✓ Complete</span>
+                                        </div>
+                                        <div style="display: flex; gap: 0.5rem; width: 100%;">
+                                            <div style="flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 0.45rem 0.6rem; display: flex; align-items: center; gap: 0.35rem; box-sizing: border-box; min-width: 0;">
+                                                <span style="font-size: 0.8rem; flex-shrink: 0;">📄</span>
+                                                <span style="font-size: 0.62rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="phase1-summary-library">Verified Claims Library</span>
+                                            </div>
+                                            <div style="flex: 1; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 0.45rem 0.6rem; display: flex; align-items: center; gap: 0.35rem; box-sizing: border-box; min-width: 0;">
+                                                <span style="font-size: 0.8rem; flex-shrink: 0;">📁</span>
+                                                <span style="font-size: 0.62rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="phase1-summary-trial">Trial Data Brief</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Mini Phase 2 Composer card -->
+                                    <div class="cdo-metric-card" style="padding: 0.95rem; display: flex; flex-direction: column; gap: 0.65rem; background: rgba(0,0,0,0.15); border: 1px solid var(--border-color); border-radius: 8px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                                            <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-text-main); text-transform: uppercase; letter-spacing: 0.3px;">Phase 2 Composer</span>
+                                            <span style="font-size: 0.58rem; background: rgba(16, 185, 129, 0.08); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.15); font-weight: 800; padding: 0.2rem 0.5rem; border-radius: 20px;">✓ Approved</span>
+                                        </div>
+                                        <div style="display: flex; gap: 0.6rem; align-items: center; width: 100%;">
+                                            <div style="width: 68px; height: 40px; border-radius: 6px; overflow: hidden; border: 1px solid var(--border-color); flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.35);">
+                                                <img src="product_a_cellular_style.png" style="width: 100%; height: 100%; object-fit: cover;" id="phase3-summary-img">
+                                            </div>
+                                            <div style="display: flex; flex-direction: column; gap: 0.25rem; min-width: 0;">
+                                                <span style="font-size: 0.7rem; font-weight: 800; color: var(--color-text-main); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="phase3-summary-title">Variant 1 (Product-A/KEYNOTE-189)</span>
+                                                <span style="font-size: 0.6rem; color: #34d399; font-weight: 700; display: flex; align-items: center; gap: 0.25rem;">
+                                                    <span style="font-size: 0.45rem; color: #10b981; animation: pulse 2s infinite;">●</span> Medical/Legal Passed
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Historical Console Logs Terminal (Spans 100% remaining height!) -->
+                                <div class="chat-console" style="margin-bottom: 0 !important; flex: 1; display: flex; flex-direction: column; min-height: 0; box-sizing: border-box; overflow: hidden;">
+                                    <div class="console-header" style="display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                                        <span>AGENT EXECUTION CONSOLE LOGS</span>
+                                        <span style="color: #34d399; font-weight: 800; font-size: 0.55rem;">● AUDITED</span>
+                                    </div>
+                                    <div class="console-body" id="console-body-phase3" style="flex: 1; font-size: 0.65rem !important; line-height: 1.55 !important; overflow-y: auto; padding: 0.6rem; box-sizing: border-box;">
+                                        <div class="console-line system">[6:19:35 PM] [Master Orchestrator]: Switched Ingestion created.</div>
+                                        <div class="console-line system">[6:19:35 PM] [Standards_Governance_Registry]: Switched workspace: A Standards Command Center.</div>
+                                        <div class="console-line system">[6:19:36 PM] [Master Orchestrator]: Focus: Creative Composer Workbench.</div>
+                                        <div class="console-line system" style="color: #fbbf24 !important;">[6:20:00 PM] [Compliance Ledger]: Final verify success for Variant 1. Ledger entry recorded.</div>
+                                        <div class="console-line system">[6:20:01 PM] [Governance Agent]: ALL automated checks passed.</div>
+                                        <div class="console-line system">[6:20:02 PM] [Master Orchestrator]: Phase 2 complete. Phase 3 (Governance & Delivery) active.</div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2: Governance Hub -->
+                        <div style="display: flex; flex-direction: column; overflow: hidden; height: 100%;">
+                            <div class="strategic-dashboard-grid" style="padding: 1.25rem !important; height: 100%; display: flex; flex-direction: column; box-sizing: border-box; justify-content: space-between;">
+                                
+                                <div class="panel-header-compact" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem; flex-shrink: 0;">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <span class="panel-icon">🛡️</span>
+                                        <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-main); margin: 0;"><span style="color: var(--color-primary); margin-right: 0.25rem;">05.</span> GOVERNANCE & COMPLIANCE LEDGER</h3>
+                                    </div>
+                                    <span class="badge-verified" style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.2); font-size: 0.58rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 20px;">✓ Verified</span>
+                                </div>
+                                
+                                <!-- Central Governance Board -->
+                                <div class="workspace-panel" style="padding: 1rem; border-radius: 12px; background: var(--bg-surface); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; flex: 1; min-height: 0;">
+                                    
+                                    <!-- Claims Relationship Visualizer Title -->
+                                    <div style="display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; gap: 0.5rem;">
+                                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--color-text-main); text-transform: uppercase; letter-spacing: 0.5px;">Claims Relationship Visualizer</span>
+                                        <span class="badge badge-active-label" id="explorer-active-label-tag" style="font-size: 0.55rem; background: var(--bg-surface-solid); border: 1px solid var(--border-color); padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 800; display: none;">Active: Week 24 Label</span>
+                                        <button class="btn btn-primary btn-small" id="btn-visualizer-audit" onclick="triggerVisualizerScan()" style="display: none; align-items: center; gap: 0.25rem; font-size: 0.58rem; padding: 0.15rem 0.4rem;">
+                                            <span>⚡</span> Run Integrity Audit
+                                        </button>
+                                        <span style="font-size: 0.58rem; color: #10b981; font-weight: 700;">✓ Verified</span>
+                                    </div>
+                                    
+<!-- Vis.js Dual-Column Governance Graph Visualizers (Scaled Up!) -->
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; flex-shrink: 0;">
+                                        <!-- Left Column: Claims Relationship Visualizer -->
+                                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                                            <span style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px;">1. Clinical Claims Ontology Map</span>
+                                            <div style="height: 400px; position: relative; border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; background: rgba(0,0,0,0.25);">
+                                                <div id="claims-network-container" style="height: 100%; width: 100%;"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Right Column: Digital Seal Trust Graph -->
+                                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                                            <span style="font-size: 0.58rem; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.5px;">2. Ledger Digital Seal Trust Graph</span>
+                                            <div style="height: 400px; position: relative; border-radius: 8px; border: 1px solid var(--border-color); overflow: hidden; background: rgba(0,0,0,0.25);">
+                                                <div id="governance-ledger-network" style="height: 100%; width: 100%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Compliance Ledger Transaction Table -->
+                                    <div style="display: flex; flex-direction: column; gap: 0.4rem; flex: 1; min-height: 0;">
+                                        <span class="gauge-label" style="font-size: 0.68rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.25rem; flex-shrink: 0;">COMPLIANCE AUDIT LEDGER</span>
+                                        <div style="overflow-y: auto; flex: 1; min-height: 0;">
+                                            <table style="width: 100%; border-collapse: collapse; text-align: left; table-layout: fixed;">
+                                                <thead>
+                                                    <tr style="border-bottom: 1px solid var(--border-color); font-size: 0.55rem; color: var(--color-text-muted); text-transform: uppercase;">
+                                                        <th style="padding: 0.4rem 0.25rem; width: 35%;">TIMESTAMP</th>
+                                                        <th style="padding: 0.4rem 0.25rem; width: 20%;">STATUS</th>
+                                                        <th style="padding: 0.4rem 0.25rem; width: 25%;">AUDITOR</th>
+                                                        <th style="padding: 0.4rem 0.25rem; text-align: right; width: 20%;">HASH</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody style="font-size: 0.62rem; font-family: monospace;" id="ledger-history-body">
+                                                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.02); color: var(--color-text-main); cursor: pointer;" onclick="showComplianceCertificate({timestamp: '2026-06-16 18:20:00', medication: 'Product-A', campaignName: 'KEYNOTE-189-NSCLC', status: 'Verified', auditor: 'Gemini Standards Agent', hash: 'sha256:d8b02ea9a11c8e5d2b71a3f009a1c662863a9b11c8e5d2b71a3f009a1c66286'})">
+                                                        <td style="padding: 0.45rem 0.25rem;">2026-06-16 18:20:00</td>
+                                                        <td style="padding: 0.45rem 0.25rem;"><span style="color: #34d399; font-weight: 800; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); padding: 0.05rem 0.25rem; border-radius: 3px;">✓ Verified</span></td>
+                                                        <td style="padding: 0.45rem 0.25rem; color: var(--color-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Gemini Standards</td>
+                                                        <td style="padding: 0.45rem 0.25rem; text-align: right; color: var(--color-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><div title="sha256:d8b02ea9a11c8e5d2b71a3f009a1c662863a9b11c8e5d2b71a3f009a1c66286">sha256:d8b02ea...</div></td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.02); color: var(--color-text-main); cursor: pointer;" onclick="showComplianceCertificate({timestamp: '2026-06-16 18:21:05', medication: 'Product-B', campaignName: 'CAMP-KT-581-CLEAR', status: 'Verified', auditor: 'Gemini Standards Agent', hash: 'sha256:8b9a2ea9a11c8e5d2b71a3f009a1c662863a9b11c8e5d2b71a3f009a1c66286'})">
+                                                        <td style="padding: 0.45rem 0.25rem;">2026-06-16 18:21:05</td>
+                                                        <td style="padding: 0.45rem 0.25rem;"><span style="color: #34d399; font-weight: 800; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); padding: 0.05rem 0.25rem; border-radius: 3px;">✓ Verified</span></td>
+                                                        <td style="padding: 0.45rem 0.25rem; color: var(--color-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Gemini Standards</td>
+                                                        <td style="padding: 0.45rem 0.25rem; text-align: right; color: var(--color-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><div title="sha256:8b9a2ea9a11c8e5d2b71a3f009a1c662863a9b11c8e5d2b71a3f009a1c66286">sha256:8b9a2ea...</div></td>
+                                                    </tr>
+                                                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.02); color: var(--color-text-main); cursor: pointer;" onclick="showComplianceCertificate({timestamp: '2026-06-16 18:22:30', medication: 'Product-C', campaignName: 'CAMP-WR-005-RCC', status: 'Verified', auditor: 'Gemini Standards Agent', hash: 'sha256:d9b23f89a11c8e5d2b71a3f009a1c662863a9b11c8e5d2b71a3f009a1c66286'})">
+                                                        <td style="padding: 0.45rem 0.25rem;">2026-06-16 18:22:30</td>
+                                                        <td style="padding: 0.45rem 0.25rem;"><span style="color: #34d399; font-weight: 800; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); padding: 0.05rem 0.25rem; border-radius: 3px;">✓ Verified</span></td>
+                                                        <td style="padding: 0.45rem 0.25rem; color: var(--color-text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Gemini Standards</td>
+                                                        <td style="padding: 0.45rem 0.25rem; text-align: right; color: var(--color-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><div title="sha256:d9b23f89a11c8e5d2b71a3f009a1c662863a9b11c8e5d2b71a3f009a1c66286">sha256:d9b23f8...</div></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Column 3: AI Guardrails & Submission Vault -->
+                        <div style="border-left: 1px solid var(--border-color); display: flex; flex-direction: column; overflow: hidden;">
+                            <div class="strategic-dashboard-grid" style="padding: 1.25rem !important; gap: 0.85rem !important; flex: 1; display: flex; flex-direction: column; box-sizing: border-box; justify-content: space-between;">
+                                <div class="panel-header-compact" style="margin-bottom: 0.1rem; display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0;">
+                                    <span class="panel-icon">🛡️</span>
+                                    <h3 style="font-size: 0.78rem; font-weight: 700; color: var(--color-text-main); margin: 0;">AI GUARDRAILS & VAULT</h3>
+                                </div>
+                                
+                                <div style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem;">
+                                    <!-- Swatches & checklist -->
+                                    <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 0.6rem; flex-shrink: 0;">
+                                        <!-- Swatches Card -->
+                                        <div class="cdo-metric-card" style="padding: 0.6rem; display: flex; flex-direction: column; gap: 0.35rem; background: rgba(0,0,0,0.15);">
+                                            <span style="font-size: 0.52rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.3px;">Governance Swatches</span>
+                                            <div style="display: flex; gap: 0.4rem; align-items: center; margin-top: 0.1rem;">
+                                                <div style="width: 26px; height: 26px; border-radius: 4px; background: #161D30; border: 1px solid rgba(255,255,255,0.1);" title="Deep Royal Indigo"></div>
+                                                <div style="width: 26px; height: 26px; border-radius: 4px; background: #0D9488; border: 1px solid rgba(255,255,255,0.1);" title="Vibrant Teal"></div>
+                                                <span style="font-size: 0.58rem; font-weight: 700; color: var(--color-text-main); white-space: nowrap;">Indigo / Teal</span>
+                                            </div>
+                                        </div>
+                                        <!-- Compliance check card -->
+                                        <div class="cdo-metric-card" style="padding: 0.6rem; display: flex; flex-direction: column; gap: 0.15rem; align-items: center; text-align: center; justify-content: center; background: rgba(0,0,0,0.15);">
+                                            <div style="background: rgba(16,185,129,0.15); color: #34d399; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.72rem; font-weight: 800; margin-bottom: 0.15rem;">✓</div>
+                                            <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-main); line-height: 1.2;">Governance Audit Pass: Guardrails Satisfied.</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Verified Clinical Claims Table -->
+                                    <div class="cdo-metric-card" style="padding: 0.75rem; display: flex; flex-direction: column; gap: 0.4rem; background: rgba(0,0,0,0.15); flex: 1; min-height: 100px;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.25rem; margin-bottom: 0.25rem; flex-shrink: 0;">
+                                            <span class="gauge-label" style="font-size: 0.55rem;">VERIFIED CLINICAL CLAIMS</span>
+                                            <span style="font-size: 0.55rem; color: #10b981; font-weight: 700;">✓ Verified</span>
+                                        </div>
+                                        <div style="overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 0.4rem;">
+                                            <div style="padding: 0.4rem; background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
+                                                <span style="font-size: 0.58rem; font-weight: 700; color: #34d399; font-family: monospace; white-space: nowrap;">CLP-KT-189-EFF</span>
+                                                <span style="font-size: 0.58rem; color: var(--color-text-muted); line-height: 1.2; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">Immune Response Rate (56% at Week 24)</span>
+                                                <span style="font-size: 0.52rem; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.05rem 0.2rem; border-radius: 3px; font-weight: 800; white-space: nowrap;">Active Product-A</span>
+                                            </div>
+                                            <div style="padding: 0.4rem; background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
+                                                <span style="font-size: 0.58rem; font-weight: 700; color: #34d399; font-family: monospace; white-space: nowrap;">CLP-KT-189-EFF2</span>
+                                                <span style="font-size: 0.58rem; color: var(--color-text-muted); line-height: 1.2; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">Immune Response Rate (56% at Week 24) KEYNOTE-189</span>
+                                                <span style="font-size: 0.52rem; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.05rem 0.2rem; border-radius: 3px; font-weight: 800; white-space: nowrap;">Active Product-A</span>
+                                            </div>
+                                            <div style="padding: 0.4rem; background: var(--bg-surface-solid); border: 1px solid var(--border-color); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
+                                                <span style="font-size: 0.58rem; font-weight: 700; color: #34d399; font-family: monospace; white-space: nowrap;">CLP-KT-189-SAF</span>
+                                                <span style="font-size: 0.58rem; color: var(--color-text-muted); line-height: 1.2; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">Immune-mediated Adverse events: 15%</span>
+                                                <span style="font-size: 0.52rem; background: rgba(16,185,129,0.12); color: #34d399; padding: 0.05rem 0.2rem; border-radius: 3px; font-weight: 800; white-space: nowrap;">Active Product-A</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Submission & Delivery Channels -->
+                                    <div class="cdo-metric-card" style="padding: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; background: rgba(0,0,0,0.15); flex-shrink: 0;">
+                                        <span class="gauge-label" style="font-size: 0.55rem;">SUBMISSION & DELIVERY</span>
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem; margin-top: 0.15rem;">
+                                            <div style="background: rgba(0,0,0,0.12); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.4rem; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; text-align: center; position: relative; cursor: pointer;" onclick="exportComplianceVaultPackage()">
+                                                <span style="font-size: 1rem;">📤</span>
+                                                <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-main); line-height: 1.1;">Export to PromoMats</span>
+                                                <span style="font-size: 0.5rem; color: var(--color-text-muted);">(Approved)</span>
+                                                <span style="position: absolute; top: 3px; right: 3px; background: rgba(16,185,129,0.15); color: #34d399; width: 10px; height: 10px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.45rem;">✓</span>
+                                            </div>
+                                            <div style="background: rgba(0,0,0,0.12); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.4rem; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; text-align: center; position: relative; cursor: pointer;" onclick="triggerFinalDelivery()">
+                                                <span style="font-size: 1rem;">📁</span>
+                                                <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-main); line-height: 1.1;" id="submission-card-2-title">Send to Camp-KT-189</span>
+                                                <span style="font-size: 0.5rem; color: var(--color-text-muted);" id="submission-card-2-subtitle">(NSCLC Vault)</span>
+                                                <span style="position: absolute; top: 3px; right: 3px; background: rgba(16,185,129,0.15); color: #34d399; width: 10px; height: 10px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.45rem;">✓</span>
+                                            </div>
+                                            <div style="background: rgba(0,0,0,0.12); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.4rem; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; text-align: center; position: relative; cursor: pointer;" onclick="openFda2253Modal()">
+                                                <span style="font-size: 1rem;">📄</span>
+                                                <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-main); line-height: 1.1;">Compile FDA FORM 2253</span>
+                                                <span style="font-size: 0.5rem; color: var(--color-text-muted);" id="submission-card-3-subtitle">(Variant 1)</span>
+                                                <span style="position: absolute; top: 3px; right: 3px; background: rgba(16,185,129,0.15); color: #34d399; width: 10px; height: 10px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.45rem;">✓</span>
+                                            </div>
+                                        </div>
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem;">
+                                            <div style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-color); padding: 0.25rem; border-radius: 4px; font-size: 0.52rem; font-weight: 700; color: var(--color-text-muted); text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.2rem;">
+                                                <span style="color: #34d399;">✓</span> FDA Transmittal
+                                            </div>
+                                            <div style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-color); padding: 0.25rem; border-radius: 4px; font-size: 0.52rem; font-weight: 700; color: var(--color-text-muted); text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.2rem;">
+                                                <span style="color: #34d399;">✓</span> FDA Transmittal
+                                            </div>
+                                            <div style="background: rgba(0,0,0,0.1); border: 1px solid var(--border-color); padding: 0.25rem; border-radius: 4px; font-size: 0.52rem; font-weight: 700; color: var(--color-text-muted); text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.2rem;">
+                                                <span style="color: #34d399;">✓</span> FDA Transmittal
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Bottom Transmit Action button (Bilateral Navigation!) -->
+                                <div style="display: flex; gap: 0.6rem; margin-top: auto; padding-top: 0.5rem; border-top: 1px solid var(--border-color); flex-shrink: 0; align-items: center; width: 100%;">
+                                    <button onclick="switchPhase(2)" style="background: rgba(255,255,255,0.03) !important; color: var(--color-text-muted) !important; border: 1px solid var(--border-color) !important; padding: 0.75rem 1.2rem !important; border-radius: 30px !important; font-size: 0.76rem !important; font-weight: 700 !important; cursor: pointer !important; transition: var(--transition-smooth) !important; display: flex; align-items: center; justify-content: center; gap: 0.3rem;" onmouseover="this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
+                                        <span>⬅ Back</span>
+                                    </button>
+                                    <button onclick="triggerFinalDelivery()" style="flex: 1; background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: white !important; border: none !important; padding: 0.75rem 1.5rem !important; border-radius: 30px !important; font-size: 0.82rem !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; cursor: pointer !important; transition: var(--transition-smooth) !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3) !important; outline: none !important; display: flex; align-items: center; justify-content: center; gap: 0.5rem;" onmouseover="this.style.filter='brightness(1.08)'" onmouseout="this.style.filter='none'">
+                                        <span>[APPROVE & EXECUTE GLOBAL DELIVERY]</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            
+            <!-- Hidden Legacy Tab Contents (Kept in DOM to satisfy D3 graph and ledger selectors in app.js!) -->
+            <div id="tab-explorer" class="tab-content" style="display: none !important;">
+                <!-- Content redirected to Phase 3 visualizer -->
+            </div>
+            
+            <div id="tab-ledger" class="tab-content" style="display: none !important;">
+                <!-- Content redirected to Phase 3 ledger table -->
+            </div>
+
+            <div id="tab-analytics" class="tab-content" style="display: none !important;">
+                <!-- Content redirected to System Diagnostics Modal -->
+            </div>
+
+        </main>
+    </div>
+
+    <!-- PREMIUM FULL-SCREEN SYSTEM DIAGNOSTICS OVERLAY MODAL -->
+    <div class="diagnostics-modal-overlay" id="diagnostics-modal" style="display: none;">
+        <div class="diagnostics-modal-card">
+            <div class="diagnostics-modal-header">
+                <div style="display: flex; align-items: center; gap: 0.65rem;">
+                    <span style="font-size: 1.35rem;">📊</span>
+                    <div style="display: flex; flex-direction: column;">
+                        <h2 style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin: 0; font-family: 'Outfit';">System Diagnostics & Compliance Analytics</h2>
+                        <p style="font-size: 0.68rem; color: var(--color-text-muted); margin: 0.15rem 0 0 0;">Real-time API telemetry, agent execution latencies, and closed-loop compliance metrics.</p>
+                    </div>
+                </div>
+                <button class="diagnostics-modal-close" onclick="toggleDiagnosticsModal()">&times;</button>
+            </div>
+            
+            <div class="diagnostics-modal-body">
+                <!-- Stats Ribbon -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 1.25rem;">
+                    <div style="padding: 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(0,0,0,0.25); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.35rem; background: rgba(13, 148, 136, 0.1); padding: 0.4rem; border-radius: 6px; display: flex; align-items: center; justify-content: center;">🔌</span>
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.3px;">Kong Gateway Latency</span>
+                            <span style="font-size: 0.85rem; font-weight: 800; color: #10B981;">12 ms</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(0,0,0,0.25); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.35rem; background: rgba(79, 70, 229, 0.1); padding: 0.4rem; border-radius: 6px; display: flex; align-items: center; justify-content: center;">🔒</span>
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.3px;">PII Sanitization Rate</span>
+                            <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-primary);">100% Secured</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(0,0,0,0.25); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.35rem; background: rgba(16, 185, 129, 0.1); padding: 0.4rem; border-radius: 6px; display: flex; align-items: center; justify-content: center;">🛡️</span>
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.3px;">MLR Judge Pass Rate</span>
+                            <span style="font-size: 0.85rem; font-weight: 800; color: #10B981;">98.2% Approved</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(0,0,0,0.25); display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 1.35rem; background: rgba(245, 158, 11, 0.1); padding: 0.4rem; border-radius: 6px; display: flex; align-items: center; justify-content: center;">⚡</span>
+                        <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-size: 0.55rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.3px;">Avg Self-Healing Time</span>
+                            <span style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-main);">1.18s (Fast)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <!-- Col 1: Latencies -->
+                    <div style="padding: 1.25rem; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 0.75rem;">
+                        <h3 style="font-size: 0.75rem; font-weight: 800; color: var(--color-text-main); text-transform: uppercase; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin: 0;">Agent Subsystem Execution Latency</h3>
+                        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.72rem; margin-top: 0.25rem;">
+                            <thead>
+                                <tr style="color: var(--color-text-muted); font-weight: 700; border-bottom: 1.5px solid var(--border-color);">
+                                    <th style="padding: 0.5rem 0;">Agent Identity</th>
+                                    <th style="padding: 0.5rem 0;">Avg Latency</th>
+                                    <th style="padding: 0.5rem 0; text-align: right;">Accuracy SLA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.6rem 0; font-weight: 600; color: var(--color-text-main);">Google Gemini Standards Agent</td>
+                                    <td style="padding: 0.6rem 0; color: var(--color-primary);">0.85s</td>
+                                    <td style="padding: 0.6rem 0; text-align: right; color: #10B981; font-weight: 700;">100% Compliant</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 0.6rem 0; font-weight: 600; color: var(--color-text-main);">Google Gemini MLR Judge Agent</td>
+                                    <td style="padding: 0.6rem 0; color: var(--color-primary);">1.22s</td>
+                                    <td style="padding: 0.6rem 0; text-align: right; color: #10B981; font-weight: 700;">98.6% Accurate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Col 2: Violations -->
+                    <div style="padding: 1.25rem; border: 1px solid var(--border-color); border-radius: 8px; background: rgba(0,0,0,0.15); display: flex; flex-direction: column; gap: 0.75rem;">
+                        <h3 style="font-size: 0.75rem; font-weight: 800; color: var(--color-text-main); text-transform: uppercase; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin: 0;">Automated Pre-Screen Violation Records</h3>
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; max-height: 120px; overflow-y: auto;">
+                            <div style="padding: 0.5rem 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background: rgba(0,0,0,0.2); display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                                    <span style="font-size: 0.7rem; font-weight: 800; color: var(--color-text-main);">CAMP-KT-189-NSCLC (Product-A)</span>
+                                    <span style="font-size: 0.55rem; color: var(--color-text-muted);">0 design token violations, 0 claims mismatch</span>
+                                </div>
+                                <span style="font-size: 0.58rem; font-weight: 800; color: #34d399; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); padding: 0.15rem 0.4rem; border-radius: 4px;">PASSED</span>
+                            </div>
+                            <div style="padding: 0.5rem 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; background: rgba(0,0,0,0.2); display: flex; justify-content: space-between; align-items: center;">
+                                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                                    <span style="font-size: 0.7rem; font-weight: 800; color: var(--color-text-main);">CAMP-KT-581-CLEAR (Product-B)</span>
+                                    <span style="font-size: 0.55rem; color: var(--color-text-muted);">1 layout overlap healed, 0 claims mismatch</span>
+                                </div>
+                                <span style="font-size: 0.58rem; font-weight: 800; color: #34d399; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); padding: 0.15rem 0.4rem; border-radius: 4px;">PASSED</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOCK CONNECTORS & VEEVA MODAL WINDOWS -->
+    <div id="modal-veeva-sync" class="modal-overlay" style="display: none;">
+        <div class="modal-card modal-compact" style="max-width: 420px; text-align: center;">
+            <span style="font-size: 2.25rem; margin-bottom: 0.5rem; display: block;">☁️</span>
+            <h2 id="veeva-modal-title" style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main); margin-bottom: 0.5rem; font-family: 'Outfit';">Veeva Vault PromoMats Sync</h2>
+            <p id="veeva-modal-body" style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 1.25rem;">Initiating secure handshake with Veeva Vault PromoMats gateway. Verifying cryptographic watermarks...</p>
+            <div style="display: flex; justify-content: center; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 0.85rem;">
+                <button class="btn btn-secondary" onclick="closeVeevaModal()" id="btn-close-veeva">Cancel</button>
+                <button class="btn btn-primary" id="btn-confirm-veeva">Sync Asset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SYSTEM READY CONFIRM DIALOG -->
+    <div id="compliance-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card" style="max-width: 540px;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1rem;">
+                <span style="font-size: 1.25rem;">📜</span>
+                <h2 style="font-size: 1.1rem; font-weight: 800; color: var(--color-text-main); margin: 0; font-family: 'Outfit';">Regulatory Compliance Certificate</h2>
+                <button onclick="closeComplianceModal()" style="background: none; border: none; color: var(--color-text-muted); font-size: 1.15rem; cursor: pointer; margin-left: auto;">&times;</button>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.72rem; line-height: 1.5; margin-bottom: 1.25rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; background: rgba(0,0,0,0.15); padding: 0.75rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                    <div><strong>Timestamp:</strong> <span id="cert-time"></span></div>
+                    <div><strong>Medication:</strong> <span id="cert-med"></span></div>
+                    <div><strong>Campaign:</strong> <span id="cert-campaign"></span></div>
+                    <div><strong>Status:</strong> <span id="cert-status" style="color: #34d399; font-weight: 800;"></span></div>
+                    <div style="grid-column: span 2;"><strong>Auditor Core:</strong> <span id="cert-auditor"></span></div>
+                </div>
+                
+                <div style="font-family: monospace; background: var(--bg-surface-solid); border: 1px solid var(--border-color); padding: 0.6rem; border-radius: 6px; word-break: break-all; font-size: 0.65rem; color: var(--color-primary);">
+                    <span style="font-weight: 700; color: var(--color-text-muted);">Ledger Transaction Block Hash:</span><br>
+                    <span id="cert-hash"></span>
+                </div>
+                
+                <p style="margin: 0; color: var(--color-text-muted); font-style: italic;">This certificate represents a cryptographically locked transmittal ledger entry. Verbatim claims correspond to FDA-approved guidelines and are locked in the Standards Registry.</p>
+            </div>
+            
+            <div style="display: flex; justify-content: flex-end; border-top: 1px solid var(--border-color); padding-top: 0.75rem;">
+                <button class="btn btn-secondary" onclick="closeComplianceModal()">Close Certificate</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ========================================== -->
+    
+
+    <!-- ========================================== -->
+    <!-- 🛡️ RECOVERED SYSTEM MODALS & OVERLAYS -->
+    <!-- ========================================== -->
+    <!-- Real-Time Grounded Metadata Tooltip Card -->
+    <div id="network-node-tooltip" class="network-tooltip" style="display: none; position: fixed; z-index: 9999; width: 280px; padding: 0.85rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-surface-solid); font-size: 0.7rem; box-shadow: var(--shadow-lg); pointer-events: none; line-height: 1.4; box-sizing: border-box; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"></div>
+
+    <!-- =====================================================================
+         GOOGLE MAESTRO COMPLIANCE & ORCHESTRATION SYSTEM MODALS
+         ===================================================================== -->
+
+    <!-- DETAIL MODAL FOR CLASSIFIED CLAIMS NODES -->
+    <div class="imagen-modal-overlay" id="detail-modal">
+        <div class="imagen-modal-card" style="max-width: 550px; width: 90%; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border-color); box-shadow: var(--shadow-xl);">
+            <div class="imagen-modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span id="detail-modal-icon" style="font-size: 1.5rem;">🔍</span>
+                    <div>
+                        <h3 id="detail-modal-title" style="font-family: 'Outfit', sans-serif; font-weight: 800; margin: 0; color: var(--color-text-main);">Node Details</h3>
+                        <p id="detail-modal-subtitle" style="font-size: 0.62rem; color: var(--color-text-muted); margin: 0.15rem 0 0 0;"></p>
+                    </div>
+                </div>
+                <button class="imagen-modal-close" onclick="closeDetailModal()" style="background: none; border: none; color: var(--color-text-muted); font-size: 1.5rem; cursor: pointer; outline: none; transition: var(--transition-smooth);">&times;</button>
+            </div>
+            <div class="imagen-modal-body" style="padding-top: 1rem;">
+                <div id="detail-modal-body" style="font-size: 0.72rem; line-height: 1.4; color: var(--color-text-main); max-height: 50vh; overflow-y: auto;">
+                    <!-- Dynamic details go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FDA FORM 2253 TRANSMITTAL COMPILER MODAL -->
+    <div class="imagen-modal-overlay" id="fda-2253-modal-overlay" style="display: none; justify-content: center; align-items: center; z-index: 10000; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="imagen-modal-card" style="max-width: 850px; width: 95%; max-height: 90vh; overflow-y: auto; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); box-shadow: var(--shadow-xl); border-radius: 16px;">
+            <div class="imagen-modal-header" style="border-bottom: 2px solid var(--color-primary); padding-bottom: 0.75rem; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span style="font-size: 1.75rem;">💼</span>
+                    <div>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-weight: 800; margin: 0; color: var(--color-text-main);">Form FDA 2253 Transmittal Sheet</h3>
+                        <p style="font-size: 0.68rem; color: var(--color-text-muted); margin: 0.15rem 0 0 0;">Transmittal of Advertisements and Promotional Labeling for Drugs and Biologics for Human Use</p>
+                    </div>
+                </div>
+                <button class="imagen-modal-close" onclick="closeFda2253Modal()" style="background: none; border: none; color: var(--color-text-muted); font-size: 1.5rem; cursor: pointer; outline: none;">&times;</button>
+            </div>
+            
+            <div class="imagen-modal-body" style="padding-top: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+                <!-- Official FDA Grid -->
+                <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.75rem; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; background: rgba(0,0,0,0.15); font-size: 0.68rem; border-left: 4px solid var(--color-primary);">
+                    <!-- Left Block -->
+                    <div style="display: flex; flex-direction: column; border-right: 1px solid var(--border-color);">
+                        <!-- Box 1 -->
+                        <div style="padding: 0.6rem; border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.25rem;">
+                            <span style="font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: var(--color-primary);">1. APPLICANT NAME & ADDRESS</span>
+                            <span id="fda-box1-name" style="font-weight: 700; color: var(--color-text-main);"></span>
+                            <span id="fda-box1-address" style="color: var(--color-text-muted); line-height: 1.3;"></span>
+                            <span id="fda-box1-tel" style="font-weight: 600; color: var(--color-text-muted);"></span>
+                        </div>
+                        <!-- Box 4 -->
+                        <div style="padding: 0.6rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                            <span style="font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: var(--color-primary);">4. PRODUCT DESCRIPTION</span>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                                    <span style="font-size: 0.52rem; text-transform: uppercase; color: var(--color-text-muted);">Proprietary Name</span>
+                                    <span id="fda-box4-proprietary" style="font-weight: 700; color: var(--color-text-main);"></span>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 0.15rem;">
+                                    <span style="font-size: 0.52rem; text-transform: uppercase; color: var(--color-text-muted);">Established Name</span>
+                                    <span id="fda-box4-established" style="font-weight: 600; color: var(--color-text-main); font-style: italic;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Block -->
+                    <div style="display: flex; flex-direction: column;">
+                        <!-- Box 2 -->
+                        <div style="padding: 0.6rem; border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: var(--color-primary);">2. TRANSMITTAL DATE</span>
+                            <span id="fda-box2-date" style="font-weight: 700; color: var(--color-text-main);"></span>
+                        </div>
+                        <!-- Box 3 -->
+                        <div style="padding: 0.6rem; border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: var(--color-primary);">3. BLA / NDA APPLICATION NO.</span>
+                            <span id="fda-box3-appno" style="font-weight: 700; font-family: monospace; color: var(--color-text-main);"></span>
+                        </div>
+                        <!-- Box 5 -->
+                        <div style="padding: 0.6rem; display: flex; flex-direction: column; gap: 0.15rem;">
+                            <span style="font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: var(--color-primary);">5. SUBMISSION TYPE</span>
+                            <span style="font-weight: 700; color: var(--color-text-main);">Original Submission (eCTD)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Box 7 (Table of Materials) -->
+                <div style="display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; background: rgba(0,0,0,0.15); font-size: 0.68rem;">
+                    <div style="padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02); font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: var(--color-primary);">
+                        7. LIST OF COMPLIANCE MATERIALS BEAT-CHECKED & WATERMARKED
+                    </div>
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.65rem;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid var(--border-color); background: rgba(0,0,0,0.2); font-weight: 700; color: var(--color-text-muted);">
+                                <th style="padding: 0.5rem 0.6rem;">MATERIAL SUBJECT / TITLE</th>
+                                <th style="padding: 0.5rem 0.6rem;">VEEVA PROMOMATS ID</th>
+                                <th style="padding: 0.5rem 0.6rem;">TACTIC TYPE</th>
+                                <th style="padding: 0.5rem 0.6rem; text-align: right;">CRYPTOGRAPHIC VERIFICATION SEAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: none;">
+                                <td style="padding: 0.6rem; font-weight: 700; color: var(--color-text-main);" id="fda-box7-title"></td>
+                                <td style="padding: 0.6rem; font-family: monospace; font-weight: 600; color: var(--color-text-main);" id="fda-box7-veevaid"></td>
+                                <td style="padding: 0.6rem; color: var(--color-text-muted);" id="fda-box7-type"></td>
+                                <td style="padding: 0.6rem; text-align: right; font-family: monospace; font-size: 0.58rem; color: var(--color-primary);" id="fda-box7-hash"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Box 8 (Signature Block) -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; background: rgba(0,0,0,0.15); font-size: 0.68rem; padding: 0.6rem; border-left: 4px solid #10b981;">
+                    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                        <span style="font-weight: 800; text-transform: uppercase; font-size: 0.55rem; color: #10b981;">8. DIGITAL SIGNATURE (APPLICANT SIGN-OFF)</span>
+                        <span id="fda-box8-signature" style="font-family: 'Outfit', cursive, sans-serif; font-size: 1rem; font-weight: 700; color: #34d399; letter-spacing: 1px;"></span>
+                        <span style="font-size: 0.52rem; color: var(--color-text-muted); text-transform: uppercase;">AUTHORIZED PHARMA REGULATORY AUDITOR</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.25rem; justify-content: flex-end; align-items: flex-end; text-align: right;">
+                        <span style="font-size: 0.52rem; text-transform: uppercase; color: var(--color-text-muted);">Signature Sign-off Date</span>
+                        <span id="fda-box8-date" style="font-weight: 700; color: var(--color-text-main);"></span>
+                    </div>
+                </div>
+                
+                <!-- Actions Row -->
+                <div style="display: flex; justify-content: flex-end; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; margin-top: 0.5rem; flex-shrink: 0;">
+                    <button class="btn btn-secondary" onclick="closeFda2253Modal()" style="padding: 0.45rem 1rem; font-size: 0.72rem; font-weight: 700; border-radius: 6px; cursor: pointer;">Cancel</button>
+                    <button class="btn btn-primary" onclick="printFda2253Form()" style="padding: 0.45rem 1.25rem; font-size: 0.72rem; font-weight: 700; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important; color: white !important; border: none;">
+                        <span>🖨️ Export FDA 2253 Binder PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GOOGLE IMAGEN 3 ASSET CREATOR MODAL -->
+    <div class="imagen-modal-overlay" id="imagen-modal">
+        <div class="imagen-modal-card" style="background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--border-color); box-shadow: var(--shadow-xl);">
+            <div class="imagen-modal-header" style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span style="font-size: 1.75rem;">✨</span>
+                    <div>
+                        <h3 style="color: var(--color-text-main); font-weight: 800;">Google Imagen 3 Asset Creator</h3>
+                        <p style="color: var(--color-text-muted);">AI-powered, brand-compliant clinical image generation</p>
+                    </div>
+                </div>
+                <button class="imagen-modal-close" onclick="closeImagenModal()">&times;</button>
+            </div>
+            
+            <div class="imagen-modal-body">
+                <div class="imagen-form-group">
+                    <label>Active Clinical Brand</label>
+                    <select id="imagen-brand-select" class="imagen-select">
+                        <option value="product_a">KEYTRUDA (Pembrolizumab)</option>
+                        <option value="product_b">LENVIMA (Lenvatinib)</option>
+                        <option value="product_c">WELIREG (Belzutifan)</option>
+                    </select>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="imagen-form-group">
+                        <label>Generative Model</label>
+                        <select id="imagen-model-select" class="imagen-select">
+                            <option value="imagen-3-clinical">Imagen 3 (Clinical High-Fidelity)</option>
+                            <option value="imagen-3-diagram">Imagen 3 (Medical Biology)</option>
+                            <option value="imagen-3-abstract">Imagen 3 (Abstract Brand Colors)</option>
+                        </select>
+                    </div>
+                    <div class="imagen-form-group">
+                        <label>Visual Style Preset</label>
+                        <select id="imagen-style-select" class="imagen-select">
+                            <option value="clinical-realism">Clinical Realism (Photorealistic)</option>
+                            <option value="microbiology-3d">3D Cellular Illustration</option>
+                            <option value="clean-infographic">Clean Vector Chart</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="imagen-form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                        <label style="margin: 0;">Image Synthesis Prompt</label>
+                        <select id="imagen-prompt-presets" class="imagen-select" style="width: auto; font-size: 0.6rem; padding: 0.1rem 0.3rem; height: auto; border-radius: 4px;">
+                            <option value="">Prompt Presets...</option>
+                            <option value="Doctor consulting with a patient in a modern oncology clinic, warm lighting, brand-compliant.">Oncology Consultation</option>
+                            <option value="3D molecular model showing drug molecules binding to receptor cells, neon brand highlights.">Receptor Binding</option>
+                            <option value="A diverse group of healthy seniors smiling outdoors, photorealistic, premium lighting.">Healthy Patients</option>
+                        </select>
+                    </div>
+                    <textarea id="imagen-prompt-input" class="imagen-textarea" placeholder="e.g., Doctor consulting with a patient in a modern oncology clinic, warm lighting, brand-compliant, high-fidelity..."></textarea>
+                </div>
+
+                <div class="imagen-form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                        <label style="margin: 0;">Negative Prompt (Elements to Avoid)</label>
+                        <select id="imagen-negative-presets" class="imagen-select" style="width: auto; font-size: 0.6rem; padding: 0.1rem 0.3rem; height: auto; border-radius: 4px;">
+                            <option value="">Negative Presets...</option>
+                            <option value="blurry, low resolution, deformed anatomy, text overlays, cartoonish, off-brand colors.">Clinical Safeguard (Strict)</option>
+                            <option value="cartoon, illustration, dark lighting, depressing clinical environment.">Realism Safeguard</option>
+                        </select>
+                    </div>
+                    <input type="text" id="imagen-negative-input" class="imagen-select" placeholder="e.g., blurry, low resolution, deformed anatomy..." value="blurry, low resolution, deformed anatomy, text overlays, cartoonish, off-brand colors.">
+                </div>
+                
+                <div class="imagen-form-group" style="display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--border-color); margin-bottom: 1.25rem;">
+                    <div style="display: flex; flex-direction: column; gap: 0.1rem;">
+                        <span style="font-size: 0.7rem; font-weight: 700; color: var(--color-text-main);">Google SynthID Watermarking</span>
+                        <span style="font-size: 0.58rem; color: var(--color-text-muted);">Injects an imperceptible digital watermark to prove clinical origin.</span>
+                    </div>
+                    <label class="switch-toggle" style="position: relative; display: inline-block; width: 34px; height: 20px;">
+                        <input type="checkbox" id="imagen-synthid-toggle" checked style="opacity: 0; width: 0; height: 0;">
+                        <span class="slider-round" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(255,255,255,0.1); transition: .4s; border-radius: 20px;"></span>
+                    </label>
+                </div>
+                
+                <!-- Google Vibrant Gemini Gradient Generate Button -->
+                <button class="btn btn-imagen-generate" id="btn-imagen-generate-run" onclick="generateImagenAsset()" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; position: relative;">
+                    <span>✨ Generate High-Fidelity Clinical Imagery</span>
+                    <span class="btn-spinner" id="imagen-spinner" style="display: none;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMMERSIVE CHAT PORTAL MODAL -->
+    <div class="imagen-modal-overlay" id="expanded-chat-modal" style="display: none; justify-content: center; align-items: center; z-index: 10000; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="imagen-modal-card" style="width: 100vw; height: 100vh; max-width: none; display: flex; flex-direction: column; background: rgba(15, 23, 42, 0.98); border: none; box-shadow: none; border-radius: 0; padding: 1.5rem 3rem; box-sizing: border-box;">
+            <div class="imagen-modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.5rem;">💬</span>
+                    <div>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-weight: 800; margin: 0; color: var(--color-text-main);">Immersive Conversational Chat Portal</h3>
+                        <p style="font-size: 0.62rem; color: var(--color-text-muted); margin: 0.15rem 0 0 0;">Detailed clinical instruction routing and multi-agent orchestration logs</p>
+                    </div>
+                </div>
+                <button class="imagen-modal-close" onclick="closeExpandedChat()" style="background: none; border: none; color: var(--color-text-muted); font-size: 1.5rem; cursor: pointer; outline: none;">&times;</button>
+            </div>
+            
+            <div class="imagen-modal-body" style="flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 1rem; padding: 1rem 0 0 0;">
+                <!-- Expanded chat history scroll area -->
+                <div class="chat-messages" id="expanded-chat-body" style="flex: 1; overflow-y: auto; padding: 0.75rem 1rem; background: rgba(0,0,0,0.18); border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.85rem;">
+                    <!-- Synced bubbles go here -->
+                </div>
+                
+                <!-- Form input bar -->
+                <form class="chat-input-form" onsubmit="submitExpandedChat(event)" style="padding: 0.5rem 1rem !important; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-surface-solid); margin: 0 !important; flex-shrink: 0; display: flex; gap: 0.5rem; align-items: center; box-sizing: border-box; width: 100%;">
+                    <input type="text" id="expanded-chat-input" placeholder="Enter detailed multi-agent orchestration instruction..." autocomplete="off" required style="font-size: 0.78rem !important; outline: none; flex: 1; background: transparent; border: none; color: var(--color-text-main);">
+                    <div style="display: flex; gap: 0.4rem; align-items: center; flex-shrink: 0;">
+                        <button type="button" class="btn btn-secondary btn-small" onclick="clearExpandedChat()" style="padding: 0.35rem 0.75rem; font-size: 0.65rem; font-weight: 700; border-radius: 6px; cursor: pointer;">Clear</button>
+                        <button type="submit" class="btn btn-primary btn-small" style="padding: 0.35rem 0.85rem; font-size: 0.65rem; font-weight: 700; border-radius: 6px; cursor: pointer; background: var(--color-primary); color: white; border: none;">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMMERSIVE CONSOLE LOG PORTAL MODAL -->
+    <div class="imagen-modal-overlay" id="expanded-console-modal" style="display: none; justify-content: center; align-items: center; z-index: 10000; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        <div class="imagen-modal-card" style="width: 100vw; height: 100vh; max-width: none; display: flex; flex-direction: column; background: rgba(15, 23, 42, 0.98); border: none; box-shadow: none; border-radius: 0; padding: 1.5rem 3rem; box-sizing: border-box;">
+            <div class="imagen-modal-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.5rem;">🖥️</span>
+                    <div>
+                        <h3 style="font-family: 'Outfit', sans-serif; font-weight: 800; margin: 0; color: var(--color-text-main);">Immersive Master Orchestrator Console Logs</h3>
+                        <p style="font-size: 0.62rem; color: var(--color-text-muted); margin: 0.15rem 0 0 0;">Real-time multi-agent self-healing, claims beat-checks, and compilation events</p>
+                    </div>
+                </div>
+                <button class="imagen-modal-close" onclick="closeExpandedConsole()" style="background: none; border: none; color: var(--color-text-muted); font-size: 1.5rem; cursor: pointer; outline: none;">&times;</button>
+            </div>
+            
+            <div class="imagen-modal-body" style="flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 1rem 0 0 0;">
+                <div class="console-body" id="expanded-console-body" style="flex: 1; overflow-y: auto; padding: 0.75rem 1rem; background: #070b19; border: 1px solid var(--border-color); border-radius: 8px; font-family: monospace; font-size: 0.68rem; line-height: 1.5; color: #34d399; box-shadow: inset 0 0 10px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 0.35rem;">
+                    <!-- Log history goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CORE JS SCRIPTS -->
+    <script src="app.js?v=1.0.5"></script>
+
+</body>
+</html>

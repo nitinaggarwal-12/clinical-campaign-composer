@@ -1,0 +1,23 @@
+{
+  "regulatory_body": "FDA / Global Promotional Materials Review Board",
+  "compliance_standards": "OPDP / PhRMA Code Guidelines",
+  "mandatory_disclosures": {
+    "Product-A": "Disclosure: Product-A (compound_alpha) safety profile is based on Regulatory Compliance Vault Ref #V-2026-KTS99. Subject to local regulatory guidelines.",
+    "Product-B": "Disclosure: Product-B (Lenvima) safety profile is based on Regulatory Compliance Vault Ref #V-2026-LV581. Subject to local regulatory guidelines.",
+    "Product-C": "Disclosure: Product-C (Welireg) safety profile is based on Regulatory Compliance Vault Ref #V-2026-WR005. Subject to local regulatory guidelines.",
+    "Product-D": "Disclosure: Product-D (Sotatercept) safety profile is based on Regulatory Compliance Vault Ref #V-2026-WV169. Subject to local regulatory guidelines.",
+    "Product-E": "Disclosure: Product-E (Olaparib) safety profile is based on Regulatory Compliance Vault Ref #V-2026-LP607. Subject to local regulatory guidelines.",
+    "Product-F": "Disclosure: Product-F (Gardasil 9) safety profile is based on Regulatory Compliance Vault Ref #V-2026-GD543. Subject to local regulatory guidelines.",
+    "Product-G": "Disclosure: Product-G (Molnupiravir) safety profile is based on Regulatory Compliance Vault Ref #V-2026-LG597. Subject to local regulatory guidelines."
+  },
+  "safety_integrity_rules": {
+    "grounding_rule": "Every efficacy claim must be immediately accompanied by its corresponding safety parameter from the approved claims registry. No net-new clinical claims or efficacy claims may be generated or hallucinated.",
+    "claim_exactness": "The numerical values (percentages, survivals, distances) stated in the marketing copy must match the active claims database EXACTLY. Discrepancies are flagged as CRITICAL and auto-healed.",
+    "safety_prominence_ratio": "Safety disclosures must be displayed in a readable, prominent font (min 0.75rem) and must not be hidden in tiny text or overlay containers."
+  },
+  "layout_integrity_rules": {
+    "header_h1_typo_scale": "Main headline must be wrapped in H1 tag using corporate design typographic scale (2.25rem, font-weight 800).",
+    "legal_footer_margin": "There must be a legal footer section at the very bottom with a minimum margin-top of 40px and a top border of 1px solid to prevent layout overlap with marketing copy.",
+    "background_transparency": "All content sections below the hero image must use transparent backgrounds to let the primary corporate dark gradient show through, avoiding solid white boxes."
+  }
+}

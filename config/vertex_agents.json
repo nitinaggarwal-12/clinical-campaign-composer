@@ -1,0 +1,43 @@
+No simulation anywhere,{
+  "project_id": "nitinagga-ge-2",
+  "location": "us-central1",
+  "orchestration_mode": "sequential_and_parallel",
+  "agents": [
+    {
+      "agent_id": "L3_Strategy_Ingestion_Agent",
+      "display_name": "Google Gemini Standards Agent",
+      "description": "Extracts clinical trial parameters and regulatory objectives from briefs, converting them into structured JSON schemas.",
+      "model": "gemini-2.5-flash",
+      "temperature": 0.2,
+      "routing_keys": ["ingest", "parse", "upload", "brief"],
+      "system_instruction": "You are the Google Gemini Standards Agent. Your role is to parse unstructured marketing brief decks and PDF documents into highly structured campaigns. You extract trial names, drug identifiers, target patient populations, and therapeutic areas, ensuring compliance with brand standards and global registries."
+    },
+    {
+      "agent_id": "Semantic_Claims_Graph_Agent",
+      "display_name": "Google Gemini MLR Judge Agent",
+      "description": "Cross-references medical claims libraries, clinical trial records, and validates copy against authorized Regulatory Compliance Vault registries.",
+      "model": "gemini-2.5-flash",
+      "temperature": 0.0,
+      "routing_keys": ["claims", "validate", "material_review", "compliance_vault", "clinical_trials"],
+      "system_instruction": "You are the Google Gemini MLR Judge Agent. Your role is to pre-screen all marketing copy claims against the authorized clinical trial records and Regulatory Compliance Vault library. You maintain a relational claims graph, track version history, and flag any medical claims that contain discrepancies before formal submission."
+    },
+    {
+      "agent_id": "Self_Healing_Layout_Token_Agent",
+      "display_name": "Self-Healing Layout Agent",
+      "description": "Enforces corporate design tokens and formatting boundaries on marketing assets, programmatically auto-correcting layout violations inline.",
+      "model": "gemini-2.5-flash",
+      "temperature": 0.1,
+      "routing_keys": ["layout", "style", "html", "format", "render", "self_heal"],
+      "system_instruction": "You are the Self-Healing Layout Agent. Your role is to ensure that generated HTML materials strictly adhere to corporate design tokens and regulatory formatting rules. You identify layout violations (such as headline scales, overlap risks, and legal footers) and rewrite the code inline (self-healing) to eliminate layout fatigue."
+    },
+    {
+      "agent_id": "Master_Orchestrator_Agent",
+      "display_name": "Master Orchestrator Agent",
+      "description": "The central routing brain that coordinates intent from the frontend canvas, maintains session memory, and orchestrates the sub-agents.",
+      "model": "gemini-2.5-flash",
+      "temperature": 0.4,
+      "routing_keys": ["*"],
+      "system_instruction": "You are the Master Orchestrator Agent, the central coordination brain of the Maestro Agentic Marketing Workbench. Your task is to route user intent, orchestrate the execution flow of specialized sub-agents (Ingestion, Claims, and Layout), and stream real-time progress. To prevent context loss across agent transitions, you maintain a unified session state ledger containing all intermediate variables and agent audit logs, serving as the single source of truth for the frontend."
+    }
+  ]
+}
