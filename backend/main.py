@@ -1443,6 +1443,12 @@ def save_diagram_endpoint(input_data: SaveDiagramInput):
         raise HTTPException(status_code=500, detail=f"Failed to save diagram: {str(e)}")
 
 
+# Serve frontend static files dynamically at the root URL
+from fastapi.staticfiles import StaticFiles
+frontend_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")
+app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+
+
 if __name__ == "__main__":
     import uvicorn
     # Start the server on localhost:8000

@@ -1,7 +1,9 @@
 // Maestro — Frontend Canvas & Agent Orchestration Client
 
-const BACKEND_URL = 'http://localhost:8000';
-const WS_URL = 'ws://localhost:8000/ws/logs';
+const BACKEND_URL = window.location.port === '3000' ? 'http://localhost:8000' : window.location.origin;
+const WS_URL = window.location.port === '3000' 
+    ? 'ws://localhost:8000/ws/logs' 
+    : (window.location.protocol === 'https:' ? 'wss://' : 'ws://') + window.location.host + '/ws/logs';
 
 let socket = null;
 let activePrompt = "";
