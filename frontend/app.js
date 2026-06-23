@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Draw default Product-A network on startup with a short delay for layout computation
     setTimeout(drawDefaultClaimsNetwork, 150);
+    
+    // Trigger the interactive onboarding tour for first-time users
+    setTimeout(initOnboardingTour, 600);
 });
 
 // Theme Management (Light / Dark Mode Toggle)
@@ -5003,4 +5006,85 @@ window.addEventListener('hashchange', () => {
     if (isRoutingInProgress) return;
     handleHashRoute();
 });
+
+
+// 🚀 INTERACTIVE ONBOARDING TOUR (DRIVER.JS INTEGRATION)
+function initOnboardingTour() {
+    // Check if the user has already seen the onboarding tour
+    if (localStorage.getItem('has_seen_onboarding') === 'true') {
+        return;
+    }
+    
+    // Selectors to verify existence in the DOM before launching
+    const requiredSelectors = [
+        '.brand-info',
+        '.heatmap-table tbody tr:first-child',
+        '#header-workflow-nav',
+        '.btn-guide-trigger'
+    ];
+    
+    // Ensure all target elements exist in the DOM before launching
+    const allExist = requiredSelectors.every(selector => document.querySelector(selector) !== null);
+    if (!allExist) {
+        console.warn('⚠️ Onboarding tour skipped: One or more target elements are not visible in the current view.');
+        return;
+    }
+    
+    // Initialize Driver.js from global IIFE namespace
+    const { driver } = window.driver.js;
+    const driverObj = driver({
+        showProgress: true,
+        animate: true,
+        allowClose: true,
+        nextBtnText: 'Next ➔',
+        prevBtnText: '⇠ Previous',
+        doneBtnText: 'Done ✓',
+        opacity: 0.75,
+        steps: [
+            {
+                element: '.brand-info',
+                popover: {
+                    title: 'Welcome to GenMedia!',
+                    description: 'This is your agentic marketing workbench built to automate downstream marketing asset creation, layout compliance, and regulatory grounding.',
+                    side: 'bottom',
+                    align: 'start'
+                }
+            },
+            {
+                element: '.heatmap-table tbody tr:first-child',
+                popover: {
+                    title: 'Trigger Strategic Ingestion',
+                    description: 'Click on any row in this heatmap (like NSCLC or RCC) to instantly trigger a strategic ingest, scan local datasets, and load the clinical campaign brief!',
+                    side: 'right',
+                    align: 'center'
+                }
+            },
+            {
+                element: '#header-workflow-nav',
+                popover: {
+                    title: 'Dynamic Workflow Navigation',
+                    description: 'This navigator guides you through the phases of clinical campaign orchestration: Command Center, Clinical Ingest, Creative Composer, and the Governance Ledger.',
+                    side: 'bottom',
+                    align: 'center'
+                }
+            },
+            {
+                element: '.btn-guide-trigger',
+                popover: {
+                    title: 'Maestro User Guide',
+                    description: 'Need help? Click the User Guide button at any time to open the comprehensive system architecture, dataflow diagrams, and detailed workflow guides.',
+                    side: 'bottom',
+                    align: 'end'
+                }
+            }
+        ],
+        onDestroyed: () => {
+            // Mark the tour as seen so it doesn't pop up again
+            localStorage.setItem('has_seen_onboarding', 'true');
+        }
+    });
+    
+    // Start the tour
+    driverObj.drive();
+}
 
