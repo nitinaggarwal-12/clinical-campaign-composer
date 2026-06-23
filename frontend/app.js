@@ -3501,7 +3501,7 @@ window.generateImagenAsset = function() {
     }
 
     // Make live request to backend
-    fetch('http://localhost:8000/api/generate-image', {
+    fetch(`${BACKEND_URL}/api/generate-image`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
