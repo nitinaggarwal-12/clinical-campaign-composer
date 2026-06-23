@@ -5222,7 +5222,7 @@ window.startInteractiveTour = function() {
                     description: 'The campaign is 100% compliant and sealed with a secure SHA-256 digital wax seal. You can now securely export to Veeva or print the Form FDA 2253! Guided tour complete!',
                     side: 'bottom',
                     align: 'center',
-                    showButtons: ['done']
+                    showButtons: ['next']
                 }
             }
         ],
