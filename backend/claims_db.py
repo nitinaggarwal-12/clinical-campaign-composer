@@ -3,6 +3,7 @@ import sqlite3
 import hashlib
 import random
 from datetime import datetime, timezone
+from typing import Any
 
 # Resolve database file path relative to this file
 DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "maestro_claims.db")
