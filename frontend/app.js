@@ -5176,7 +5176,7 @@ window.startInteractiveTour = function() {
                 }
             },
             {
-                element: '#phase-1-view',
+                element: '#global-nav-btn-2',
                 popover: {
                     title: 'Step 2: Harvesting & Grounding 📥',
                     description: 'Maestro is reading the briefing, harvesting approved claims, and matching them against the claims registry. Now, **click on the "Creative Composer" button** in the top header to view the draft campaign assets!',
